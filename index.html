@@ -42,7 +42,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">田伯光<span>•申德周</span></a>
+                    <a class="navbar-brand" href="index.html">程昱<span>•申德周</span></a>
                 </div>
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
@@ -81,6 +81,13 @@
                         <!--<li><a href="#">Home</a></li>
                         <li><a href="#">Pages</a></li>-->
                         <li class="active">Blog</li>
+                        <li>
+														<audio id="player" autoplay="autoplay" controls>
+															<source src="audio/ifyou.mp3" type="audio/mp3"></source>
+															<p>If you are reading this, it is because your browser does not support the audio element.</p>
+														</audio>
+														
+                       	</li>
                     </ol>
                 </div>
             </div>
@@ -486,8 +493,9 @@
 
 
   <script>
-
-
+  	var x = document.getElementById("player");
+		if(Math.random() > 0.5)
+  		x.src ="audio/renxi.mp3";
   </script>
 
   </body>
