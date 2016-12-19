@@ -142,10 +142,8 @@
 						    <a class="gallery-item" href="single_{{page}}.html">
 							<img src="img/beauty/beauty_{{ page }}_1.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
 							<span class="overlay">
-								{% assign name = page.images_name[forloop.index0] %}
-								{% assign count = page.images_count[forloop.index0] %}
-								<h2>{{name}}</h2>
-								<span>{{count}} Photos</span>
+								<h2>{{forloop.index0}}</h2>
+								<span>{{forloop.index0}} Photos</span>
 							</span>
 							</a>
 						  {% endfor %}
