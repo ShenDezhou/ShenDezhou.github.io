@@ -142,11 +142,11 @@
 				<p><p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p></p>
 
 				<div class="row">
-				 {% for image in page.images) %}
-				 	{% if image.id == page.index%}
-					 	{% for i in (1..{{image.count}}) %}
+				 {% for page in page.images) %}
+				 	{% if page.id == page.index%}
+					 	{% for i in (1..page.count) %}
 						 	<div class="col-md-12">
-								<figure><img src="img/{{image.prefix}}_{{i}}.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" class="img-responsive">
+								<figure><img src="img/{{page.prefix}}_{{i}}.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" class="img-responsive">
 									<figcaption>An image caption, pointing has no <a href="#">control</a> about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</figcaption>
 								</figure>
 							</div>
