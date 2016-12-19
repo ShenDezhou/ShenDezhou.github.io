@@ -1,7 +1,7 @@
-images:
-    -name: 美图
-     count: 100
-    -name: 美图1
-     count: 90
-    -name: 美图2
-     count: 8
+- name: 美图
+  count: 100
+- name: 美图1
+  count: 90
+- name: 美图2
+  count: 8
+      
