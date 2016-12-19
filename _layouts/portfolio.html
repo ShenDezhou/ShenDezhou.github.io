@@ -138,22 +138,22 @@
 			<div class="col-lg-1"></div>
 				<div id="fh5co-main" class="col-lg-10" style="float:left">
 					<div class="fh5co-gallery">
-						<a class="gallery-item" href="art.html">
-							<img src="img/art/art_1.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-							<span class="overlay">
-								<h2>{{page.topic1}}</h2>
-								<span>{{page.topic1_num}} Photos</span>
-							</span>
-						  </a>
 						 {% for page in (1..7) %}
 						    <a class="gallery-item" href="single_{{page}}.html">
 							<img src="img/beauty/beauty_{{ page }}_1.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
 							<span class="overlay">
-								<h2>{{page.topic[page]}}</h2>
-								<span>{{page.topic_num[page]}} Photos</span>
+								<h2>Nature</h2>
+								<span>14 Photos</span>
 							</span>
 							</a>
 						  {% endfor %}
+						  <a class="gallery-item" href="art.html">
+							<img src="img/art/art_1.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+							<span class="overlay">
+								<h2>Nature</h2>
+								<span>14 Photos</span>
+							</span>
+						  </a>
 						<!--<a class="gallery-item" href="single.html">
 							<img src="images/work_1.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
 							<span class="overlay">
