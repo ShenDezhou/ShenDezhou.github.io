@@ -142,8 +142,9 @@
 						    <a class="gallery-item" href="single_{{page}}.html">
 							<img src="img/beauty/beauty_{{ page }}_1.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
 							<span class="overlay">
+								{% capture number %}{{ page.count[page] }}{% endcapture %}
 								<h2>Nature</h2>
-								<span>{{page.count[page|plus:-1]}} Photos</span>
+								<span>{{number}} Photos</span>
 							</span>
 							</a>
 						  {% endfor %}
