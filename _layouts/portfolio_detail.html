@@ -147,23 +147,22 @@
 				 
 				  {% if page.prefix %}
 				  	{% for page in (1..{{page.images[1]}}) %}
+					 	<div class="col-md-12">
+							<figure><img src="img/art/art_{{ page }}.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" class="img-responsive">
+								<figcaption>An image caption, pointing has no <a href="#">control</a> about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</figcaption>
+							</figure>
+						</div>
+						</a>
+					  {% endfor %}
+				  {% else %}
+					{% assign name = page.images[0] %}
+				 	{% for page in (1..{{page.images[1]}}) %}
 				 	<div class="col-md-12">
 						<figure><img src="img/beauty/beauty_{{ name |append: '_' | append: page }}.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" class="img-responsive">
 							<figcaption>An image caption, pointing has no <a href="#">control</a> about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</figcaption>
 						</figure>
 					</div>
-					</a>
-				  {% endfor %}
-				  {% else %}
-				 {% assign name = page.images[0] %}
-				 {% for page in (1..{{page.images[1]}}) %}
-				 	<div class="col-md-12">
-						<figure><img src="img/art/art_{{ page }}.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" class="img-responsive">
-							<figcaption>An image caption, pointing has no <a href="#">control</a> about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</figcaption>
-						</figure>
-					</div>
-					</a>
-				  {% endfor %}
+				  	{% endfor %}
 				  {% endif %}
 				</div>
 
