@@ -139,10 +139,10 @@
 				<div id="fh5co-main" class="col-lg-10" style="float:left">
 					<div class="fh5co-gallery">
 						 {% for image in page.images %}
-						    <a class="gallery-item" href="single_{{image.count|plus:1}}.html">
+						    <a class="gallery-item" href="single_{{image.count}}.html">
 							<img src="img/beauty/beauty_{{ image.count }}_1.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
 							<span class="overlay">
-								<h2>{{ image.name}}</h2>
+								<h2>{{image.name}}</h2>
 								<span>{{image.count}} Photos</span>
 							</span>
 							</a>
