@@ -93,10 +93,40 @@
         </div>
     </div>
     <!--breadcrumbs end-->
-
-	{{ content }}
-
-     <!--footer start-->
+	<!--container start-->
+	<div class="container">
+		{% for post in page.posts %}
+			<div class="row">
+	        <!--blog start-->
+	        <div class="col-lg-9 ">
+	            <div class="blog-item">
+	                <div class="row">
+	                    <div class="col-lg-2 col-sm-2">
+	                        <div class="date-wrap">
+	                            <span class="date">10</span>
+	                            <span class="month">September</span>
+	                        </div>
+	                        <div class="comnt-wrap">
+	                            <span class="comnt-ico">
+	                                <i class="icon-comments"></i>
+	                            </span>
+	                            <span class="value">15</span>
+	                        </div>
+	                    </div>
+	                    <div class="col-lg-10 col-sm-10">
+	                        <div class="blog-img">
+	                            <img src="{{post.blog_img}}" alt=""/>
+	                        </div>
+	                    </div>
+	                </div>
+	                
+	            </div>
+			</div>
+		{% endfor %}
+	
+	</div>
+	<!--container end-->
+	<!--footer start-->
      <footer class="footer">
          <div class="container">
              <div class="row">
