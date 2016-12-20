@@ -35,32 +35,7 @@ posts:
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-2 col-sm-2 text-right">
-                        <div class="author">
-                            By <a href="#">Admin</a>
-                        </div>
-                        <ul class="list-unstyled">
-                        	{% for _style in page.posts.style %}
-															<li><a href="javascript:;"><em>{{_style}}</em></a></li>
-                          {% endfor %}
-                        </ul>
-                        <div class="shate-view">
-                            <ul class="list-unstyled">
-                                <li><a href="javascript:;">{{post.views}} View</a></li>
-                                <li><a href="javascript:;">{{post.share}} Share</a></li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-10 col-sm-10">
-                        <h1><a href="{{post.post_href}}">{{page.post_abstract[0]}}</a></h1>
-                        {% for _abstract in page.posts.post_abstract %}
-												<p>{{_abstract}}</p>
-												{% endfor %}
-                        <a href="{{post.post_href}}" class="btn btn-danger">Continue Reading</a>
-                    </div>
-                </div>
+                
             </div>
 		</div>
 	{% endfor %}
