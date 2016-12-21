@@ -60,7 +60,7 @@
 	<!-- Owl Carousel -->
 	<link rel="stylesheet" href="assets/ft5_blend/css/owl.carousel.min.css">
 	<link rel="stylesheet" href="assets/ft5_blend/css/owl.theme.default.min.css">
-	<!-- Theme style  -->
+	<!-- T153heme style  -->
 	<link rel="stylesheet" href="assets/ft5_blend/css/style.css">
 
 	<!-- Modernizr JS -->
@@ -150,7 +150,7 @@
 				 	 {% else %}
 				 	 	{% capture name %}/{{ page.prefix }}/{{ page.prefix }}_{{ page.images[0] }}_{% endcapture %}
 				 	 {% endif %}
-				 	{% for page in (1..{{page.images[1]}}) %}
+				 	{% for page in (1..page.images[1]) %}
 				 	<div class="col-md-12">
 						<figure><img src="img/{{ name | append: page }}.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" class="img-responsive">
 							<figcaption>An image caption, pointing has no <a href="#">control</a> about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</figcaption>

@@ -8,21 +8,21 @@
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>FlatLab Frontend | Blog</title>
+    <title>FlatLab Frontend | Blog Details</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/theme.css" rel="stylesheet">
-    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <link href="{{site.ascent}}css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{site.ascent}}css/theme.css" rel="stylesheet">
+    <link href="{{site.ascent}}css/bootstrap-reset.css" rel="stylesheet">
     <!--external css-->
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/flexslider.css"/>
-    <link href="assets/bxslider/jquery.bxslider.css" rel="stylesheet" />
+    <link href="{{site.ascent}}assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{site.ascent}}css/flexslider.css"/>
+    <link href="{{site.ascent}}assets/bxslider/jquery.bxslider.css" rel="stylesheet" />
 
 
       <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/style-responsive.css" rel="stylesheet" />
+    <link href="{{site.ascent}}css/style.css" rel="stylesheet">
+    <link href="{{site.ascent}}css/style-responsive.css" rel="stylesheet" />
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
@@ -32,7 +32,7 @@
   </head>
 
   <body>
-     <!--header start-->
+    <!--header start-->
     <header class="header-frontend">
         <div class="navbar navbar-default navbar-static-top">
             <div class="container">
@@ -56,12 +56,12 @@
                                 <li><a href="button.html">Buttons</a></li>
                             </ul>
                         </li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
                         <li><a href="price.html">Price</a></li>
                         
-                        <li><a href="contact.html">Contact</a></li>-->
-                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><input type="text" placeholder=" Search" class="form-control search"></li>-->
                         <li class="active"><a href="index.html">Blog</a></li>
-                        <li><input type="text" placeholder=" Search" class="form-control search"></li>
                     </ul>
                 </div>
             </div>
@@ -74,33 +74,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-sm-4">
-                    <h1>Blog</h1>
+                    <h1>Blog Details</h1>
                 </div>
                 <div class="col-lg-8 col-sm-8">
                     <ol class="breadcrumb pull-right">
                         <!--<li><a href="#">Home</a></li>
                         <li><a href="#">Pages</a></li>-->
-                        <li class="active">Blog</li>
-                        <li>
-							<audio id="player" autoplay="autoplay" controls>
-								<source src="audio/ifyou.mp3" type="audio/mp3"></source>
-								<p>If you are reading this, it is because your browser does not support the audio element.</p>
-							</audio>
-                       	</li>
+                        <li class="active">Blog Details</li>
                     </ol>
                 </div>
             </div>
         </div>
     </div>
     <!--breadcrumbs end-->
-	<!--container start-->
-	<div class="container">
+
+    <!--container start-->
+    <div class="container">
         <div class="row">
             <!--blog start-->
-           
-				 	<div class="col-lg-9 ">
-				 		 {% for post in site.posts %}
-				 		 {% assign post_sitedata = site.data.posts[post.title] %}
+            <div class="col-lg-9">
                 <div class="blog-item">
                     <div class="row">
                         <div class="col-lg-2 col-sm-2">
@@ -117,7 +109,8 @@
                         </div>
                         <div class="col-lg-10 col-sm-10">
                             <div class="blog-img">
-                                <img src="{{post_sitedata.blog_img}}" alt=""/>
+                                 {% assign post_sitedata = site.data.posts[page.title] %}
+                                <img src="{{site.ascent | append: post_sitedata.blog_img}}" alt=""/>
                             </div>
 
                         </div>
@@ -135,38 +128,125 @@
                             </ul>
                             <div class="shate-view">
                                 <ul class="list-unstyled">
-                                    <li><a href="javascript:;">{{post_sitedata.views}} View</a></li>
-                                    <li><a href="javascript:;">{{post_sitedata.shares}} Share</a></li>
+                                    <li><a href="javascript:;">209 View</a></li>
+                                    <li><a href="javascript:;">23 Share</a></li>
 
                                 </ul>
                             </div>
                         </div>
                         <div class="col-lg-10 col-sm-10">
-                            <h1><a href="{{post.url}}">{{post.title}}</a></h1>
-                            {{post.excerpt}}
-                            <a href="{{post.url}}" class="btn btn-danger">Continue Reading</a>
+                        	{{content}}
+                            <!--<h1><a href="blog_detail.html">Scrapy#Python#爬虫#裁判文书网#</a></h1>
+                            <p>Redis、Mongodb、代理API已準備好，目前Scrapy使用代理有問題。</p>
+                            <blockquote>
+                                <p>
+                                    A.HTTP,HTTPS,Socks代理區別。
+                                    <br>
+                                    B.Scrapy使用上述高匿代理。
+                                </p>
+                                <small>田波光<cite title="Source Title">2016-12-13晚17：32</cite></small>
+                            </blockquote>-->
+                            <div class="media">
+                                <h3>Comments</h3>
+                                <hr>
+                                <a class="pull-left" href="javascript:;">
+                                    <img class="media-object" src="{{site.ascent}}img/avatar1.jpg" alt="">
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">
+                                        Anjelina Joli <span>|</span>
+                                        <span>12 July 2013, 10:20 </span>
+                                    </h4>
+                                    <p>
+                                        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                                    </p>
+                                    <a href="javascript:;">Reply</a>
+                                    <hr>
+                                    <!-- Nested media object -->
+                                    <div class="media">
+                                        <a class="pull-left" href="javascript:;">
+                                            <img class="media-object" src="{{site.ascent}}img/avatar2.jpg" alt="">
+                                        </a>
+                                        <div class="media-body">
+                                            <h4 class="media-heading">
+                                                Tom Cruse <span>|</span>
+                                                <span>12 July 2013, 10:30 </span>
+                                            </h4>
+                                            <p>
+                                                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                                            </p>
+                                            <a href="javascript:;">Reply</a>
+                                        </div>
+                                    </div>
+                                    <!--end media-->
+                                    <hr>
+                                    <div class="media">
+                                        <a class="pull-left" href="javascript:;">
+                                            <img class="media-object" src="{{site.ascent}}img/avatar1.jpg" alt="">
+                                        </a>
+                                        <div class="media-body">
+                                            <h4 class="media-heading">
+                                                Nicol Kidman <span>|</span>
+                                                <span>12 July 2013, 10:40 </span>
+                                            </h4>
+                                            <p>
+                                                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                                            </p>
+                                            <a href="javascript:;">Reply</a>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <!--end media-->
+                                </div>
+                            </div>
+                            <div class="media">
+                                <a class="pull-left" href="javascript:;">
+                                    <img class="media-object" src="{{site.ascent}}img/avatar2.jpg" alt="">
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">
+                                        Tom Cruse <span>|</span>
+                                        <span>12 July 2013, 11:10 </span>
+                                    </h4>
+                                    <p>
+                                        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                                    </p>
+                                    <a href="javascript:;">Reply</a>
+                                </div>
+                            </div>
+                            <div class="post-comment">
+                                <h3 class="skills">Post Comments</h3>
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-group">
+                                        <div class="col-lg-4">
+                                            <input type="text" placeholder="Name" class="col-lg-12 form-control">
+                                        </div>
+
+                                        <div class="col-lg-4">
+                                            <input type="text" placeholder="Email" class="col-lg-12 form-control">
+                                        </div>
+
+                                        <div class="col-lg-4">
+                                            <input type="text" placeholder="2*five=? *" class="col-lg-12 form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lg-12">
+                                            <textarea placeholder="Message" rows="8" class=" form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        <button type="submit" class="btn btn-danger pull-right">Post Comment</button>
+                                    </p>
+                                </form>
+                            </div>
+
                         </div>
                     </div>
-                </div>
-             {% endfor %}   
-                 	
-
-                <div class="text-center">
-                    <ul class="pagination">
-                        <li><a href="#">«</a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">»</a></li>
-                    </ul>
                 </div>
 
             </div>
 
-				  	
-            
             <div class="col-lg-3">
                 <div class="blog-side-item">
                     <div class="search-row">
@@ -187,7 +267,7 @@
                         <h3>Latest Blog Post</h3>
                         <div class="media">
                             <a class="pull-left" href="javascript:;">
-                                <img class=" " src="img/blog/blog-thumb-1.jpg" alt="">
+                                <img class=" " src="{{site.ascent}}img/blog/blog-thumb-1.jpg" alt="">
                             </a>
                             <div class="media-body">
                                 <h5 class="media-heading"><a href="javascript:;">02 May 2016 </a></h5>
@@ -198,7 +278,7 @@
                         </div>
                         <div class="media">
                             <a class="pull-left" href="javascript:;">
-                                <img class=" " src="img/blog/blog-thumb-2.jpg" alt="">
+                                <img class=" " src="{{site.ascent}}img/blog/blog-thumb-2.jpg" alt="">
                             </a>
                             <div class="media-body">
                                 <h5 class="media-heading"><a href="javascript:;">02 May 2016 </a></h5>
@@ -209,7 +289,7 @@
                         </div>
                         <div class="media">
                             <a class="pull-left" href="javascript:;">
-                                <img class=" " src="img/blog/blog-thumb-3.jpg" alt="">
+                                <img class=" " src="{{site.ascent}}img/blog/blog-thumb-3.jpg" alt="">
                             </a>
                             <div class="media-body">
                                 <h5 class="media-heading"><a href="javascript:;">02 May 2016 </a></h5>
@@ -254,10 +334,12 @@
 
             <!--blog end-->
         </div>
-	</div>
-	<!--container end-->
-	<!--footer start-->
-     <footer class="footer">
+
+    </div>
+    <!--container end-->
+
+		<!--footer start-->
+    <footer class="footer">
          <div class="container">
              <div class="row">
                  <div class="col-lg-3 col-sm-3">
@@ -292,25 +374,24 @@
      <!--footer end-->
 
   <!-- js placed at the end of the document so the pages load faster -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/hover-dropdown.js"></script>
-    <script defer src="js/jquery.flexslider.js"></script>
-    <script type="text/javascript" src="assets/bxslider/jquery.bxslider.js"></script>
+    <script src="{{site.ascent}}js/jquery.js"></script>
+    <script src="{{site.ascent}}js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{site.ascent}}js/hover-dropdown.js"></script>
+    <script defer src="{{site.ascent}}js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="{{site.ascent}}assets/bxslider/jquery.bxslider.js"></script>
 
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/link-hover.js"></script>
+    <script src="{{site.ascent}}js/jquery.easing.min.js"></script>
+    <script src="{{site.ascent}}js/link-hover.js"></script>
 
 
      <!--common script for all pages-->
-    <script src="js/common-scripts.js"></script>
-	
-	
-	  <script>
-	  	var x = document.getElementById("player");
-			if(Math.random() > 0.5)
-	  		x.src ="audio/renxi.mp3";
-	  </script>
+    <script src="{{site.ascent}}js/common-scripts.js"></script>
+
+
+  <script>
+
+
+  </script>
 
   </body>
 </html>
