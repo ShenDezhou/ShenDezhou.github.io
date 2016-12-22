@@ -8,7 +8,7 @@
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>FlatLab Frontend | Blog</title>
+    <title>{{page.title}}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -150,19 +150,22 @@
                 </div>
              {% endfor %}   
                  	
-
-                <div class="text-center">
-                    <ul class="pagination">
-                        <li><a href="#">«</a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">»</a></li>
-                    </ul>
-                </div>
-
+							<!-- Pagination links -->
+							<div class="text-center">
+								<ul class="pagination">
+							                    
+							  {% if paginator.previous_page %}
+							    <li><a href="{{ paginator.previous_page_path }}" class="previous">Previous</a></li>
+							  {% else %}
+							    <li><span class="previous">Previous</span></li>
+							  {% endif %}
+							  <li><span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span></li>
+							  {% if paginator.next_page %}
+							    <li><a href="{{ paginator.next_page_path }}" class="next">Next</a></li>
+							  {% else %}
+							    <li><span class="next ">Next</span></li>
+							  {% endif %}
+							</div>
             </div>
 
 				  	
