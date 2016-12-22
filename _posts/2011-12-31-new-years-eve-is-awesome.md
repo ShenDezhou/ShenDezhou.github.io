@@ -17,7 +17,6 @@ def show
 end
 {% endhighlight %}
  <!--more-->该分支下的文件将会被 Jekyll 处理，生成的站点会被 部署到你的用户站点的子目录上，例如 username.github.io/project （除 非指定了一个自定义的域名）。
-![My helpful screenshot](/img/blog/a.png)
 Jekyll 项目本身就是一个很好的例子，Jekyll 项目的代码存放在 master 分支 ， 而 Jekyll 的项目站点（就是你现在看见的网页）包含在同一仓库的 gh-pages 分支 中。
 
 项目站点的网址结构

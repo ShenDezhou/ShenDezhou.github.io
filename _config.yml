@@ -1,4 +1,4 @@
-gems: [jekyll-paginate]
+#gems: [jekyll-paginate]
 host: 192.168.123.128
 port: 8888
 ascent: ../../../
