@@ -1,6 +1,6 @@
 #gems: [jekyll-paginate]
-host: 192.168.123.128
+host: 0.0.0.0
 port: 8888
-ascent: ../../../
+#ascent: ../../../
 paginate: 5
 #baseurl: https://ShenDezhou.github.io/
