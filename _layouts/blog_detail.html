@@ -117,8 +117,11 @@
                         </div>
                         <div class="col-lg-10 col-sm-10">
                             <div class="blog-img">
-                                 {% assign post_sitedata = site.data.posts[page.title] %}
+                                {% assign post_sitedata = site.data.posts[page.title] %}
                                 <img src="/{{post_sitedata.blog_img}}" alt=""/>
+                                {% if post_sitedata.iframe != null %}
+                                <iframe src="{{post_sitedata.iframe}}" width="100%" height="{{post_sitedata.height}}"></iframe>
+                                {% endif %}
                             </div>
 
                         </div>
