@@ -1,25 +1,32 @@
-Blogging Like a Hacker:
-      blog_img: 'img/blog/a.png'
-      style:    ['travel','tour','recreation','tourism']
-      views: 209
-      shares: 23
-Blogging Like a Hacker1: 
-      blog_img: 'img/blog/b.png'
-      style:    ['travel','tour','recreation','tourism']
-      views: 209
-      shares: 23
-asdf asdf asdf:
+partition visualization: 
       blog_img: 'img/blog/f.png'
       style:    ['travel','tour','recreation','tourism']
       iframe:  /assets/d3.layout.partition/index.html
       height: 1000px
       views: 209
       shares: 23
-asdf asdf asdf1:
+treemap visualization: 
       blog_img: 'img/blog/g.png'
       style:    ['travel','tour','recreation','tourism']
       iframe:  /assets/d3.layout.treemap/index.html
       height: 1000px
+      views: 209
+      shares: 23
+social media visualiztion: 
+      blog_img:  'img/blog/h.png'
+      style:    ['travel','tour','recreation','tourism']
+      iframe:  /assets/d3-2way-tree/index.html
+      height: 600px
+      views: 209
+      shares: 23
+Blogging Like a Hacker: 
+      blog_img: 'img/blog/a.png'
+      style:    ['travel','tour','recreation','tourism']
+      views: 209
+      shares: 23
+Blogging Like a Hacker1:  
+      blog_img: 'img/blog/b.png'
+      style:    ['travel','tour','recreation','tourism']
       views: 209
       shares: 23
 Blogging Like a Hacker2: 

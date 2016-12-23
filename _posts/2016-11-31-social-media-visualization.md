@@ -1,6 +1,6 @@
 ---
 layout: blog_detail
-title: asdf asdf asdf1
+title: social media visualiztion
 excerpt_separator: <!--more-->
 ---
 项目的站点

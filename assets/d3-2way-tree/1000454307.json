@@ -1,0 +1,721 @@
+{
+	"count": 54,
+	"parents": [
+		{
+			"count": 1,
+			"parents": [
+				{
+					"count": 1,
+					"parents": [
+						{
+							"count": 1,
+							"parents": [
+								{
+									"count": 1,
+									"parents": [
+										{
+											"count": 1,
+											"parents": [
+												{
+													"count": 1,
+													"name": "只要"
+												}
+											],
+											"name": "等级"
+										}
+									],
+									"name": "福利"
+								}
+							],
+							"name": "土豪"
+						}
+					],
+					"name": "小伙伴"
+				}
+			],
+			"name": "儿们"
+		}, {
+			"count": 1,
+			"parents": [
+				{
+					"count": 1,
+					"name": "刚刚"
+				}
+			],
+			"name": "更换"
+		}, {
+			"count": 23,
+			"name": "转发"
+		}, {
+			"count": 1,
+			"name": "新版"
+		}, {
+			"count": 3,
+			"parents": [
+				{
+					"count": 1,
+					"name": "星夜"
+				}, {
+					"count": 1,
+					"parents": [
+						{
+							"count": 1,
+							"parents": [
+								{
+									"count": 1,
+									"name": "公司"
+								}
+							],
+							"name": "聚会"
+						}
+					],
+					"name": "闫佳宝"
+				}, {
+					"count": 1,
+					"parents": [
+						{
+							"count": 1,
+							"name": "2013"
+						}
+					],
+					"name": "张小妍"
+				}
+			],
+			"name": "相声"
+		}, {
+			"count": 2,
+			"name": "李菁"
+		}, {
+			"count": 1,
+			"parents": [
+				{
+					"count": 1,
+					"parents": [
+						{
+							"count": 1,
+							"name": "关于"
+						}
+					],
+					"name": "留美"
+				}
+			],
+			"name": "1991"
+		}, {
+			"count": 1,
+			"name": "郭天翼"
+		}, {
+			"count": 1,
+			"parents": [
+				{
+					"count": 1,
+					"name": "新年"
+				}
+			],
+			"name": "新气象"
+		}, {
+			"count": 2,
+			"name": "王玥"
+		}, {
+			"count": 1,
+			"name": "王大磊"
+		}, {
+			"count": 1,
+			"parents": [
+				{
+					"count": 1,
+					"parents": [
+						{
+							"count": 1,
+							"name": "大家"
+						}
+					],
+					"name": "张小妍"
+				}
+			],
+			"name": "青岛"
+		}, {
+			"count": 1,
+			"parents": [
+				{
+					"count": 1,
+					"parents": [
+						{
+							"count": 1,
+							"name": "已经"
+						}
+					],
+					"name": "三天"
+				}
+			],
+			"name": "我查"
+		}, {
+			"count": 1,
+			"name": "您好"
+		}, {
+			"count": 1,
+			"name": "春节"
+		}, {
+			"count": 3,
+			"name": "我刚"
+		}, {
+			"count": 1,
+			"name": "封箱"
+		}, {
+			"count": 1,
+			"parents": [
+				{
+					"count": 1,
+					"parents": [
+						{
+							"count": 1,
+							"parents": [
+								{
+									"count": 1,
+									"parents": [
+										{
+											"count": 1,
+											"name": "北京"
+										}
+									],
+									"name": "春晚"
+								}
+							],
+							"name": "偶遇"
+						}
+					],
+					"name": "李菁"
+				}
+			],
+			"name": "帥小悅"
+		}, {
+			"count": 1,
+			"parents": [
+				{
+					"count": 1,
+					"parents": [
+						{
+							"count": 1,
+							"name": "KITTY"
+						}
+					],
+					"name": "YI"
+				}
+			],
+			"name": "领养"
+		}, {
+			"count": 1,
+			"parents": [
+				{
+					"count": 1,
+					"parents": [
+						{
+							"count": 1,
+							"parents": [
+								{
+									"count": 1,
+									"parents": [
+										{
+											"count": 1,
+											"name": "头戴"
+										}
+									],
+									"name": "闪亮"
+								}
+							],
+							"name": "身披"
+						}
+					],
+					"name": "模板"
+				}
+			],
+			"name": "吼吼"
+		}, {
+			"count": 1,
+			"parents": [
+				{
+					"count": 1,
+					"name": "王玥"
+				}
+			],
+			"name": "睡萌萌"
+		}, {
+			"count": 1,
+			"parents": [
+				{
+					"count": 1,
+					"name": "必须"
+				}
+			],
+			"name": "保洁员"
+		}, {
+			"count": 2,
+			"parents": [
+				{
+					"count": 1,
+					"parents": [
+						{
+							"count": 1,
+							"name": "刚刚"
+						}
+					],
+					"name": "绑定"
+				}, {
+					"count": 1,
+					"parents": [
+						{
+							"count": 1,
+							"name": "刚刚"
+						}
+					],
+					"name": "绑定"
+				}
+			],
+			"name": "神掌"
+		}
+	],
+	"name": "微博",
+	"children": [
+		{
+			"count": 1,
+			"name": "等级",
+			"children": [
+				{
+					"count": 1,
+					"name": "享好"
+				}, {}
+			]
+		}, {
+			"count": 1,
+			"name": "专享"
+		}, {
+			"count": 1,
+			"name": "封面",
+			"children": [
+				{
+					"count": 1,
+					"name": "网页",
+					"children": [
+						{
+							"count": 1,
+							"name": "链接"
+						}
+					]
+				}, {
+					"count": 1,
+					"name": "专属"
+				}
+			]
+		}, {
+			"count": 1,
+			"name": "美食",
+			"children": [
+				{
+					"count": 1,
+					"name": "频道",
+					"children": [
+						{
+							"count": 1,
+							"name": "升级"
+						}
+					]
+				}
+			]
+		}, {
+			"count": 1,
+			"name": "好友",
+			"children": [
+				{
+					"count": 1,
+					"name": "信息流",
+					"children": [
+						{
+							"count": 1,
+							"name": "滑动",
+							"children": [
+								{
+									"count": 1,
+									"name": "屏蔽",
+									"children": [
+										{
+											"count": 1,
+											"name": "广告"
+										}
+									]
+								}
+							]
+						}
+					]
+				}, {}
+			]
+		}, {
+			"count": 5,
+			"name": "相声",
+			"children": [
+				{
+					"count": 1,
+					"name": "会馆"
+				}, {
+					"count": 1,
+					"name": "李菁",
+					"children": [
+						{
+							"count": 1,
+							"name": "lijing",
+							"children": [
+								{
+									"count": 1,
+									"name": "星夜"
+								}
+							]
+						}
+					]
+				}, {
+					"count": 1,
+					"name": "鼓掌"
+				}, {
+					"count": 1,
+					"name": "应宁"
+				}, {
+					"count": 1,
+					"name": "闫佳宝"
+				}, {
+					"count": 1,
+					"name": "程磊",
+					"children": [
+						{
+							"count": 1,
+							"name": "王玥",
+							"children": [
+								{
+									"count": 1,
+									"name": "应宁"
+								}
+							]
+						}
+					]
+				}, {
+					"count": 1,
+					"name": "学员"
+				}, {
+					"count": 1,
+					"name": "天雷"
+				}, {
+					"count": 1,
+					"name": "张小妍",
+					"children": [
+						{
+							"count": 1,
+							"name": "小张"
+						}
+					]
+				}, {
+					"count": 1,
+					"name": "演员",
+					"children": [
+						{
+							"count": 1,
+							"name": "星夜"
+						}, {
+							"count": 1,
+							"name": "刘彤",
+							"children": [
+								{
+									"count": 1,
+									"name": "应宁"
+								}
+							]
+						}
+					]
+				}
+			]
+		}, {
+			"count": 1,
+			"name": "执子之手",
+			"children": [
+				{
+					"count": 1,
+					"name": "与子偕老",
+					"children": [
+						{
+							"count": 1,
+							"name": "美梦",
+							"children": [
+								{
+									"count": 1,
+									"name": "月亮"
+								}
+							]
+						}
+					]
+				}
+			]
+		}, {
+			"count": 1,
+			"name": "微信",
+			"children": [
+				{
+					"count": 1,
+					"name": "网页",
+					"children": [
+						{
+							"count": 1,
+							"name": "链接"
+						}
+					]
+				}
+			]
+		}, {
+			"count": 1,
+			"name": "王大磊",
+			"children": [
+				{
+					"count": 1,
+					"name": "张骥"
+				}
+			]
+		}, {
+			"count": 1,
+			"name": "双榆树",
+			"children": [
+				{
+					"count": 1,
+					"name": "北路"
+				}
+			]
+		}, {
+			"count": 1,
+			"name": "小街"
+		}, {
+			"count": 1,
+			"name": "红包",
+			"children": [
+				{
+					"count": 1,
+					"name": "网页",
+					"children": [
+						{
+							"count": 1,
+							"name": "链接"
+						}, {
+							"count": 1,
+							"name": "微信"
+						}
+					]
+				}, {}
+			]
+		}, {
+			"count": 4,
+			"name": "密友",
+			"children": [
+				{
+					"count": 1,
+					"name": "前页"
+				}, {
+					"count": 1,
+					"name": "添加"
+				}, {
+					"count": 1,
+					"name": "功能",
+					"children": [
+						{
+							"count": 1,
+							"name": "发布"
+						}
+					]
+				}, {
+					"count": 1,
+					"name": "前页"
+				}, {
+					"count": 1,
+					"name": "添加"
+				}, {
+					"count": 1,
+					"name": "功能",
+					"children": [
+						{
+							"count": 1,
+							"name": "发布"
+						}
+					]
+				}
+			]
+		}, {
+			"count": 1,
+			"name": "刘彤",
+			"children": [
+				{
+					"count": 1,
+					"name": "张小妍",
+					"children": [
+						{
+							"count": 1,
+							"name": "新街口",
+							"children": [
+								{
+									"count": 1,
+									"name": "北大街"
+								}
+							]
+						}
+					]
+				}
+			]
+		}, {
+			"count": 1,
+			"name": "抢鲜",
+			"children": [
+				{
+					"count": 1,
+					"name": "速来",
+					"children": [
+						{
+							"count": 1,
+							"name": "网页",
+							"children": [
+								{
+									"count": 1,
+									"name": "链接"
+								}
+							]
+						}
+					]
+				}
+			]
+		}, {
+			"count": 1,
+			"name": "保洁员",
+			"children": [
+				{
+					"count": 1,
+					"name": "213"
+				}
+			]
+		}, {
+			"count": 1,
+			"name": "特发",
+			"children": [
+				{
+					"count": 1,
+					"name": "一举成名",
+					"children": [
+						{
+							"count": 1,
+							"name": "勋章"
+						}
+					]
+				}
+			]
+		}, {
+			"count": 1,
+			"name": "一呼百应",
+			"children": [
+				{
+					"count": 1,
+					"name": "好好",
+					"children": [
+						{
+							"count": 1,
+							"name": "获得"
+						}
+					]
+				}
+			]
+		}, {
+			"count": 2,
+			"name": "成此",
+			"children": [
+				{
+					"count": 1,
+					"name": "神功",
+					"children": [
+						{
+							"count": 1,
+							"name": "绑定",
+							"children": [
+								{
+									"count": 1,
+									"name": "网页",
+									"children": [
+										{
+											"count": 1,
+											"name": "链接"
+										}
+									]
+								}
+							]
+						}
+					]
+				}, {
+					"count": 1,
+					"name": "神功",
+					"children": [
+						{
+							"count": 1,
+							"name": "绑定",
+							"children": [
+								{
+									"count": 1,
+									"name": "网页",
+									"children": [
+										{
+											"count": 1,
+											"name": "链接"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}, {
+			"count": 1,
+			"name": "私密",
+			"children": [
+				{
+					"count": 1,
+					"name": "全新",
+					"children": [
+						{
+							"count": 1,
+							"name": "支付",
+							"children": [
+								{
+									"count": 1,
+									"name": "中心"
+								}
+							]
+						}
+					]
+				}
+			]
+		}, {
+			"count": 1,
+			"name": "支持",
+			"children": [
+				{
+					"count": 1,
+					"name": "分组",
+					"children": [
+						{
+							"count": 1,
+							"name": "分享"
+						}
+					]
+				}, {
+					"count": 1,
+					"name": "表情",
+					"children": [
+						{
+							"count": 1,
+							"name": "首页"
+						}, {
+							"count": 1,
+							"name": "时间"
+						}
+					]
+				}
+			]
+		}
+	]
+}

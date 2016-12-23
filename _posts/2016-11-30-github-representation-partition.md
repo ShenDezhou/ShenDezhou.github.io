@@ -1,6 +1,6 @@
 ---
 layout: blog_detail
-title: asdf asdf asdf
+title: partition visualization
 excerpt_separator: <!--more-->
 ---
 项目的站点
