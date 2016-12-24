@@ -3,11 +3,26 @@ layout: blog_detail
 title: social media visualiztion
 excerpt_separator: <!--more-->
 ---
-项目的站点
+引言
+对社交媒体通过分词提取关键词，而后递归提取由关键词分割的两部分的关键词，最终形成以关键词为中心的星型网络。
+保留了原博文中的语义关系。
 
-不同于用户和组织的站点，项目的站点文件存放在项目本身仓库的 gh-pages 分支中。 <!--more-->该分支下的文件将会被 Jekyll 处理，生成的站点会被 部署到你的用户站点的子目录上，例如 username.github.io/project （除 非指定了一个自定义的域名）。
-Jekyll 项目本身就是一个很好的例子，Jekyll 项目的代码存放在 master 分支 ， 而 Jekyll 的项目站点（就是你现在看见的网页）包含在同一仓库的 gh-pages 分支 中。
+Word Tree 
 
-项目站点的网址结构
+类似“字母树”结构
 
-你最好在将 Jekyll 站点提交到 gh-pages 之前先预览一下。因为 Github 上项目站点的子目录结构会使站点的网址结构变得复杂。这里有一些处 理 Github Pages 子目录结构（username.github.io/project-name/）的方法 使你本地浏览的站点和部署在 Github Pages 上的站点一致，方便你的维 护。
+• 字体大小编码出现频率
+
+短语网络（PharseNet）
+
+节点-链接视图
+
+• 展示“A the B”关系
+
+Sentence Tree
+
+将网络形态进行了限制，由多个根结点出发，途径一个唯一节点。
+
+展示语料库中多个句子间的共同点。
+
+保留了原句的语义，但又丢失了关键结点前后的对应关系。

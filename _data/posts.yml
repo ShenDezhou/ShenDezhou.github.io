@@ -1,3 +1,10 @@
+merry christmas: 
+      blog_img: 'img/blog/i.png'
+      style:    ['travel','tour','recreation','tourism']
+      iframe:  /assets/renxi/index.html
+      height: 700px
+      views: 209
+      shares: 23
 partition visualization: 
       blog_img: 'img/blog/f.png'
       style:    ['travel','tour','recreation','tourism']
@@ -41,6 +48,11 @@ Blogging Like a Hacker3:
       shares: 23
 Blogging Like a Hacker4: 
       blog_img: 'img/blog/e.png'
+      style:    ['travel','tour','recreation','tourism']
+      views: 209
+      shares: 23
+Blogging Like a Hacker5: 
+      blog_img: 'img/blog/j.png'
       style:    ['travel','tour','recreation','tourism']
       views: 209
       shares: 23
