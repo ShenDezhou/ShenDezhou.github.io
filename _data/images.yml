@@ -1,0 +1,40 @@
+    - images: [1,94]
+      name: '美图'
+      count: 94
+      prefix: 'beauty/beauty_1'
+      link: 'single_1'
+    - images: [2,52]
+      name: '美图'
+      count: 52
+      prefix: 'beauty/beauty_2'
+      link: 'single_2'
+    - images: [3，24]
+      name: '美图'
+      count: 24
+      prefix: 'beauty/beauty_3'
+      link: 'single_3'
+    - images: [4,28]
+      name: '美图'
+      count: 28
+      prefix: 'beauty/beauty_4'
+      link: 'single_4'
+    - images: [5,2]
+      name: '美图'
+      count: 25
+      prefix: 'beauty/beauty_5'
+      link: 'single_5'
+    - images: [6，24]
+      name: '美图'
+      count: 2
+      prefix: 'beauty/beauty_6'
+      link: 'single_6'
+    - images: [7,94]
+      name: '美图'
+      count: 16
+      prefix: 'beauty/beauty_7'
+      link: 'single_7'
+    - images: [8,53]
+      name: '艺术照'
+      count: 53
+      prefix: 'art/art'
+      link: 'single_8'
