@@ -69,30 +69,8 @@
     </header>
     <!--header end-->
 
-    <!--breadcrumbs start-->
-    <div class="breadcrumbs">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-sm-4">
-                    <h1>Blog</h1>
-                </div>
-                <div class="col-lg-8 col-sm-8">
-                    <ol class="breadcrumb pull-right">
-                        <!--<li><a href="#">Home</a></li>
-                        <li><a href="#">Pages</a></li>-->
-                        <li class="active">Blog</li>
-                        <li>
-							<audio id="player" autoplay="autoplay" controls>
-								<source src="/audio/ifyou.mp3" type="audio/mp3"></source>
-								<p>If you are reading this, it is because your browser does not support the audio element.</p>
-							</audio>
-                       	</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--breadcrumbs end-->
+    {% include inc_mp3.html %}
+
 	<!--container start-->
 	<div class="container">
         <div class="row">
@@ -258,43 +236,12 @@
 
             <!--blog end-->
         </div>
+
+
+
 	</div>
 	<!--container end-->
-	<!--footer start-->
-     <footer class="footer">
-         <div class="container">
-             <div class="row">
-                 <div class="col-lg-3 col-sm-3">
-                     <h1>contact info</h1>
-                     <address>
-                         <p>Address: 清华大学计算机系</p>
-                         <p>海淀区，北京</p>
-                         <p>Email : <a href="javascript:;">bangtech#sina.com</a></p>
-                     </address>
-                 </div>
-                 <div class="col-lg-5 col-sm-5">
-                     <h1>latest tweet</h1>
-                     More Templates 
-                 </div>
-                 <div class="col-lg-3 col-sm-3 col-lg-offset-1">
-                     <h1>stay connected</h1>
-                     <ul class="social-link-footer list-unstyled">
-                         <!--<li><a href="#"><i class="icon-facebook"></i></a></li>
-                         <li><a href="#"><i class="icon-google-plus"></i></a></li>
-                         <li><a href="#"><i class="icon-dribbble"></i></a></li>
-                         <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                         <li><a href="#"><i class="icon-twitter"></i></a></li>
-                         <li><a href="#"><i class="icon-skype"></i></a></li>
-                         
-                         <li><a href="#"><i class="icon-youtube"></i></a></li>-->
-                         <li><a href="https://github.com/ShenDezhou"><i class="icon-github"></i></a></li>
-                     </ul>
-                 </div>
-             </div>
-         </div>
-     </footer>
-     <!--footer end-->
-
+     <% include inc_foot.html %>
   <!-- js placed at the end of the document so the pages load faster -->
     <script src="/js/jquery.js"></script>
     <script src="/js/bootstrap.min.js"></script>

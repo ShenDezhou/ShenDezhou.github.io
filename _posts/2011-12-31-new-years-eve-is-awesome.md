@@ -1,7 +1,6 @@
 ---
 layout: blog_detail
 title: Blogging Like a Hacker
-id: 5
 excerpt_separator: <!--more-->
 ---
 项目的站点
