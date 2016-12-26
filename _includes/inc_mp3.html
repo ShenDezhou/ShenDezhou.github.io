@@ -23,7 +23,19 @@
     </div>
 <!--breadcrumbs end-->
 <script>
-var x = document.getElementById("player");
-    if(Math.random() > 0.5)
-    x.src ="/audio/renxi.mp3";
+    var al = ["/audio/ifyou.mp3","/audio/renxi.mp3"];
+	var x = document.getElementById("player");
+    var index = new Date().getMilliseconds() % al.length;
+    x.src =al[index];
+    console.log(x.src);
+    x.onended = function(){
+    	var x = document.getElementById("player");
+    	var index = new Date().getMilliseconds() % al.length;
+	    x.pause();
+        x.src =al[index];
+	    console.log(x.src);
+        x.play();
+    };
+
+
 </script>
