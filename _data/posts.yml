@@ -1,3 +1,10 @@
+build c++ using scons: 
+      blog_img: 'img/blog/a.png'
+      style:    ['travel','tour','recreation','tourism']
+      iframe: 
+      height: 
+      views: 209
+      shares: 23
 merry christmas: 
       blog_img: 'img/blog/i.png'
       style:    ['travel','tour','recreation','tourism']
