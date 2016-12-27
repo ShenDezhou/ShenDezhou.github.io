@@ -14,7 +14,7 @@ Usage:
 
 touch SConstruct
 
-#use emacs SConstruct to edit content, ... need to replace by meaningful content.
+#use emacs SConstruct to edit content, ... need to be replaced by meaningful content.
 
 {% highlight ruby %} 
 Program('xxx.out',['source.cpp',...],LIBS=['staticlib',...],LIBPATH=['/usr/lib',...],CCFlags=['-g','-Wall','-O3'],CPPPATH=['/usr/include',...])
