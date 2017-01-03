@@ -1,4 +1,11 @@
-build c++ using scons: 
+c++ data structure vector:
+      blog_img: 'img/blog/b.png'
+      style:    ['travel','tour','recreation','tourism']
+      iframe:
+      height:
+      views: 209
+      shares: 23
+build c++ using scons:
       blog_img: 'img/blog/a.png'
       style:    ['travel','tour','recreation','tourism']
       iframe: 
