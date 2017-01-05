@@ -83,8 +83,23 @@
                     <div class="row">
                         <div class="col-lg-2 col-sm-2">
                             <div class="date-wrap">
-                                <span class="date">10</span>
-                                <span class="month">September</span>
+                                <span class="date">{{ post.date | date: '%d' }} </span>
+                                <span class="month">{% assign m = post.date | date: "%-m" %}
+                                    {% case m %}
+                                      {% when '1' %}January
+                                      {% when '2' %}Febrary
+                                      {% when '3' %}March
+                                      {% when '4' %}April
+                                      {% when '5' %}May
+                                      {% when '6' %}June
+                                      {% when '7' %}July
+                                      {% when '8' %}August
+                                      {% when '9' %}September
+                                      {% when '10' %}October
+                                      {% when '11' %}November
+                                      {% when '12' %}December
+                                    {% endcase %}
+                                </span>
                             </div>
                             <div class="comnt-wrap">
                                 <span class="comnt-ico">
