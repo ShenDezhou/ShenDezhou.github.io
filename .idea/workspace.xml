@@ -240,8 +240,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -318,10 +316,12 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="E:/大数据平台核心技术/java/MapReduce" />
+    <property name="last_opened_file_path" value="E:/distribute/excercise1/homework" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -564,7 +564,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="3852" height="2114" extended-state="1" />
+    <frame x="-6" y="0" width="3852" height="2114" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2492163" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -679,11 +679,29 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2011-12-31-new-years-eve-is-awesome4.md">
+      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2011-12-31-new-years-eve-is-awesome3.md">
       <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
@@ -700,13 +718,13 @@
           <second_editor />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2011-12-31-new-years-eve-is-awesome3.md">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2011-12-31-new-years-eve-is-awesome2.md">
       <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
@@ -723,27 +741,9 @@
           <second_editor />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2011-12-31-new-years-eve-is-awesome2.md">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -895,11 +895,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2011-12-31-new-years-eve-is-awesome1.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
       <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
@@ -916,13 +911,13 @@
           <second_editor />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2011-12-31-new-years-eve-is-awesome.md">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="108">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2011-12-31-new-years-eve-is-awesome.md">
       <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
@@ -937,6 +932,11 @@
             <caret line="2" column="22" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="29" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1049,6 +1049,6 @@
     </entry>
   </component>
   <component name="webServersAuthStorage">
-    <data>AAAAsNvD/iHj01MlXXY6pwBSnOtQgIfrmLdguTgokzoYU38y7aNbtulc1aQKqSrDwdR9GRySIhxZ2V+YVL80q6wppJQJCkxhnBhPjE05wAuGFaYw/4tszMGqaM6jzA37psEKHrAyNkB3wbm4um0zQNKP6rJdWAzK6C+UIgQUMhB45+BnnCEGtzAhfMMxeyvDLlMRTw/uP3tVsYnHoTS/ZtXt+JNDspcvhKj7jyeSd1KkXh30VDOUMax+9ihF0C91j2ki0A==</data>
+    <data>AAAAsE/4u2DRx/9mBr4h6qwAPdcO1XTg2ptTpl2qUMLyyjlV4YCIQRyNu9OG+QGbGnRyLfPkFPAO+EynNXifCW2FAyuXRivbOU9lq1s2ABGauGOa3YHH/yJ98oHn8QyTAI7kHXarMwO+B02JV8jWHkU4XETIczNYdDZMwulKG3sw3gGC7s3RMoBffyOzYjrMjAba9v6gdvSNnZDULfgWjvsPSsWU9C21SwaDts/kYNLn9pj4yWwnJHItcTRAVnV3zr+qsA==</data>
   </component>
 </project>
