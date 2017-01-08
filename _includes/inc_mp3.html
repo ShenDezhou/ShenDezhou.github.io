@@ -1,41 +1,39 @@
 <!--breadcrumbs start-->
-    <div class="breadcrumbs">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-sm-4">
-                    <h1>{{page.layout}}</h1>
-                </div>
-                <div class="col-lg-8 col-sm-8">
-                    <ol class="breadcrumb pull-right">
-                        <!--<li><a href="#">Home</a></li>
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-4">
+                <h1>{{page.layout}}</h1>
+            </div>
+            <div class="col-lg-8 col-sm-8">
+                <ol class="breadcrumb pull-right">
+                    <!--<li><a href="#">Home</a></li>
                         <li><a href="#">Pages</a></li>-->
-                        <li class="active">{{page.layout}}</li>
-                        <li>
-							<audio id="player" autoplay="autoplay" controls>
-								<source src="/audio/ifyou.mp3" type="audio/mp3"></source>
-								<p>If you are reading this, it is because your browser does not support the audio element.</p>
-							</audio>
-                       	</li>
-                    </ol>
-                </div>
+                    <li class="active">{{page.layout}}</li>
+                    <li>
+                        <audio id="player" autoplay="autoplay" controls>
+                            <source src="/audio/ifyou.mp3" type="audio/mp3"></source>
+                            <p>If you are reading this, it is because your browser does not support the audio element.</p>
+                        </audio>
+                    </li>
+                </ol>
             </div>
         </div>
     </div>
+</div>
 <!--breadcrumbs end-->
 <script>
-    var al = ["/audio/ifyou.mp3","/audio/renxi.mp3"];
-	var x = document.getElementById("player");
+var al = ["/audio/ifyou.mp3", "/audio/renxi.mp3","/audio/ganghao.mp3"];
+var x = document.getElementById("player");
+var index = new Date().getMilliseconds() % al.length;
+x.src = al[index];
+console.log(x.src);
+x.onended = function() {
+    var x = document.getElementById("player");
     var index = new Date().getMilliseconds() % al.length;
-    x.src =al[index];
+    x.pause();
+    x.src = al[index];
     console.log(x.src);
-    x.onended = function(){
-    	var x = document.getElementById("player");
-    	var index = new Date().getMilliseconds() % al.length;
-	    x.pause();
-        x.src =al[index];
-	    console.log(x.src);
-        x.play();
-    };
-
-
+    x.play();
+};
 </script>

@@ -1,37 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Mosaddek">
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <!--<link rel="shortcut icon" href="img/favicon.png">-->
-
     <title>{{page.title}}</title>
-
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/theme.css" rel="stylesheet">
     <link href="/css/bootstrap-reset.css" rel="stylesheet">
     <!--external css-->
     <link href="/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/flexslider.css"/>
+    <link rel="stylesheet" href="/css/flexslider.css" />
     <link href="/assets/bxslider/jquery.bxslider.css" rel="stylesheet" />
-
-
-      <!-- Custom styles for this template -->
+    <!-- Custom styles for this template -->
     <link href="/css/style.css" rel="stylesheet">
     <link href="/css/style-responsive.css" rel="stylesheet" />
-
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
       <script src="/js/html5shiv.js"></script>
       <script src="/js/respond.min.js"></script>
     <![endif]-->
-  </head>
+</head>
 
-  <body>
+<body>
     <!--header start-->
     <header class="header-frontend">
         <div class="navbar navbar-default navbar-static-top">
@@ -63,17 +59,16 @@
                         <li><input type="text" placeholder=" Search" class="form-control search"></li>-->
                         <li><a href="/portfolio.html">Portfolio</a></li>
                         <li class="active"><a href="/index.html">Blog</a></li>
-                        <li><input type="text" placeholder=" Search" class="form-control search"></li>
+                        <li>
+                            <input type="text" placeholder=" Search" class="form-control search">
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </header>
     <!--header end-->
-
     {% include inc_mp3.html %}
-
-
     <!--container start-->
     <div class="container">
         <div class="row">
@@ -83,8 +78,8 @@
                     <div class="row">
                         <div class="col-lg-2 col-sm-2">
                             <div class="date-wrap">
-                                <span class="date">{{ post.date | date: '%d' }} </span>
-                                <span class="month">{% assign m = post.date | date: "%-m" %}
+                                <span class="date">{{ page.date | date: '%d' }} </span>
+                                <span class="month">{% assign m = page.date | date: "%-m" %}
                                     {% case m %}
                                       {% when '1' %}January
                                       {% when '2' %}Febrary
@@ -111,12 +106,10 @@
                         <div class="col-lg-10 col-sm-10">
                             <div class="blog-img">
                                 {% assign post_sitedata = site.data.posts[page.title] %}
-                                <img src="/{{post_sitedata.blog_img}}" alt=""/>
-                                {% if post_sitedata.iframe != null %}
+                                <img src="/{{post_sitedata.blog_img}}" alt="" /> {% if post_sitedata.iframe != null %}
                                 <iframe src="{{post_sitedata.iframe}}" width="100%" height="{{post_sitedata.height}}"></iframe>
                                 {% endif %}
                             </div>
-
                         </div>
                     </div>
                     <div class="row">
@@ -134,13 +127,11 @@
                                 <ul class="list-unstyled">
                                     <li><a href="javascript:;">209 View</a></li>
                                     <li><a href="javascript:;">23 Share</a></li>
-
                                 </ul>
                             </div>
                         </div>
                         <div class="col-lg-10 col-sm-10">
-                        	{{content}}
-                            
+                            {{content}}
                             <div class="media">
                                 <h3>Comments</h3>
                                 <hr>
@@ -216,11 +207,9 @@
                                         <div class="col-lg-4">
                                             <input type="text" placeholder="Name" class="col-lg-12 form-control">
                                         </div>
-
                                         <div class="col-lg-4">
                                             <input type="text" placeholder="Email" class="col-lg-12 form-control">
                                         </div>
-
                                         <div class="col-lg-4">
                                             <input type="text" placeholder="2*five=? *" class="col-lg-12 form-control">
                                         </div>
@@ -235,13 +224,10 @@
                                     </p>
                                 </form>
                             </div>
-
                         </div>
                     </div>
                 </div>
-
             </div>
-
             <div class="col-lg-3">
                 <div class="blog-side-item">
                     <div class="search-row">
@@ -257,7 +243,6 @@
                             <li><a href="javascript:;"><i class="  icon-angle-right"></i> Javascript</a></li>
                         </ul>
                     </div>
-
                     <div class="blog-post">
                         <h3>Latest Blog Post</h3>
                         <div class="media">
@@ -294,7 +279,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="tags">
                         <h3>Tags</h3>
                         <ul class="list-unstyled tag">
@@ -310,8 +294,6 @@
                             <li><a href="#"> Dashboard</a></li>
                         </ul>
                     </div>
-
-
                     <div class="archive">
                         <h3>Archive</h3>
                         <ul class="list-unstyled">
@@ -322,65 +304,23 @@
                             <li><a href="javascript:;"><i class="  icon-angle-right"></i> January 2016</a></li>
                         </ul>
                     </div>
-
-
                 </div>
             </div>
-
             <!--blog end-->
         </div>
-
     </div>
     <!--container end-->
-
-    	   <!--footer start-->
-    <footer class="footer">
-             <div class="container">
-                 <div class="row">
-                     <div class="col-lg-3 col-sm-3">
-                         <h1>contact info</h1>
-                         <address>
-                             <p>Address: 清华大学计算机系</p>
-                             <p>海淀区，北京</p>
-                             <p>Email : <a href="javascript:;">bangtech#sina.com</a></p>
-                         </address>
-                     </div>
-                     <div class="col-lg-5 col-sm-5">
-                         <h1>latest tweet</h1>
-                         More Templates
-                     </div>
-                     <div class="col-lg-3 col-sm-3 col-lg-offset-1">
-                         <h1>stay connected</h1>
-                         <ul class="social-link-footer list-unstyled">
-                             <!--<li><a href="#"><i class="icon-facebook"></i></a></li>
-                             <li><a href="#"><i class="icon-google-plus"></i></a></li>
-                             <li><a href="#"><i class="icon-dribbble"></i></a></li>
-                             <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                             <li><a href="#"><i class="icon-twitter"></i></a></li>
-                             <li><a href="#"><i class="icon-skype"></i></a></li>
-
-                             <li><a href="#"><i class="icon-youtube"></i></a></li>-->
-                             <li><a href="https://github.com/ShenDezhou"><i class="icon-github"></i></a></li>
-                         </ul>
-                     </div>
-                 </div>
-             </div>
-         </footer>
-    <!--footer end-->
-
-  <!-- js placed at the end of the document so the pages load faster -->
+    {% include inc_foot.html %}
+    <!-- js placed at the end of the document so the pages load faster -->
     <script src="/js/jquery.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/hover-dropdown.js"></script>
     <script defer src="/js/jquery.flexslider.js"></script>
     <script type="text/javascript" src="/assets/bxslider/jquery.bxslider.js"></script>
-
     <script src="/js/jquery.easing.min.js"></script>
     <script src="/js/link-hover.js"></script>
-
-
-     <!--common script for all pages-->
+    <!--common script for all pages-->
     <script src="/js/common-scripts.js"></script>
+</body>
 
-  </body>
 </html>
