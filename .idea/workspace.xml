@@ -24,9 +24,14 @@
       <file leaf-file-name="blog.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_layouts/blog.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1116">
-              <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="-3810">
+              <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
+              <folding>
+                <element signature="e#7446#7453#0" expanded="true" />
+                <element signature="e#7513#7520#0" expanded="true" />
+                <element signature="e#8355#8362#0" expanded="true" />
+                <element signature="e#8422#8429#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1009,9 +1014,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_layouts/blog.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1116">
-          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="-3810">
+          <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
+          <folding>
+            <element signature="e#7446#7453#0" expanded="true" />
+            <element signature="e#7513#7520#0" expanded="true" />
+            <element signature="e#8355#8362#0" expanded="true" />
+            <element signature="e#8422#8429#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

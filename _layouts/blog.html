@@ -135,20 +135,30 @@
                 </div>
                 {% endfor %}
                 <!-- Pagination links -->
+                {% if paginator.total_pages > 1 %}
                 <div class="text-center">
                     <ul class="pagination">
-                        {% if paginator.previous_page %}
-                        <li><a href="{{ paginator.previous_page_path }}" class="previous">Previous</a></li>
-                        {% else %}
-                        <li><span class="previous">Previous</span></li>
-                        {% endif %}
-                        <li><span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span></li>
+                    {% if paginator.previous_page %}
+                        <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a></li> {% else %}
+                        <li><span>&laquo; Prev</span> </li>{% endif %} 
+                        {% for page in (1..paginator.total_pages) %} 
+                        {% if page == paginator.page %}
+                        <li><span>{{ page }}</span></li>
+                         {% elsif page == 1 %}
+                        <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
+                         {% else %}
+                        <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+                         {% endif %}
+                         {% endfor %} 
                         {% if paginator.next_page %}
-                        <li><a href="{{ paginator.next_page_path }}" class="next">Next</a></li>
-                        {% else %}
-                        <li><span class="next ">Next</span></li>
+                        <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a></li> {% else %}
+                        <li><span>Next &raquo;</span></li>
                         {% endif %}
+                        <li><span class="page_number ">{{paginator.page}}/{{ paginator.total_pages }}</span></li>
+                    </ul>
                 </div>
+                {% endif %}
+
             </div>
             <div class="col-lg-3">
                 <div class="blog-side-item">
