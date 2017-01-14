@@ -3,6 +3,6 @@ layout: blog_detail
 title: Top Conference
 excerpt_separator: <!--more-->
 ---
-Acronym Standard Name   Rank
+CCF推荐会议目录
 <!--more-->
-![CCF推荐会议目录](/texts/2015ccfmulu.pdf){:class="img-responsive"}
+[CCF推荐会议目录]({{ site.url }}/texts/2015ccfmulu.pdf)
