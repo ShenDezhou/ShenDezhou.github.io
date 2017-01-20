@@ -91,7 +91,7 @@ Definition and declaration in the same file.
 
 1.2The #define Guard
 
-<project>_<path>_<file>_H_.
+<p roject>_<p ath>_<f ile>_H_.
 
 1.3Forward Declareations
 
