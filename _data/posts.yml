@@ -54,7 +54,7 @@ treemap visualization:
       height: 1000px
       views: 209
       shares: 23
-social media visualiztion: 
+social media visualization: 
       blog_img:  'img/blog/h.png'
       style:    ['travel','tour','recreation','tourism']
       iframe:  /assets/d3-2way-tree/index.html

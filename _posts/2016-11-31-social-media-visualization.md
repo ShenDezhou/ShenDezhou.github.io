@@ -1,6 +1,6 @@
 ---
 layout: blog_detail
-title: social media visualiztion
+title: social media visualization
 excerpt_separator: <!--more-->
 ---
 引言
