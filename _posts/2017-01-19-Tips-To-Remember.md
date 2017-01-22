@@ -427,16 +427,198 @@ You may need to be careful with structure alignments, particularly for structure
 
 Use LL or ULL suffixes.
 
-7. Comments
+6.11.1 Preprocessor Macros
+
+Avoid defining macros, especially in headers; prefer inline functions, enums, and const variables.
+
+6.11.2 0 and nullptr/NULL
+
+Use 0 for integers, 0.0 for reals, nullptr (or NULL) for pointers, and '\0' for chars..
+
+6.11.3 sizeof
+
+Prefer sizeof(varname) to sizeof(type)
+
+use sizeof(varname) when you take the size of a perticular variable.
+
+6.11.4 auto
+
+Use auto to avoid type names that are noisy, obvious, or unimportant - cases.
+
+6.11.5 Braced Initializer List
+
+C++11, any object type can now be created with a braced initializer list, known as a brace-init-list in the grammar.
+
+A user-defined type can also define a constructor and/or assignment operator that take std::initializer_list<T>.
+
+Brace initialization can also call ordinary contructors of data types, even if they do not have std::initializer_list<T>.
+
+6.12 Lambda expressions
+
+Are a concise way of creating anonymous function objects.
+
+Allow capturing variables from the enclosing scope. Explicit captures require each variable to be listed, as either a value or refrence capture
+
+Default captures implicitly capture any variable referenced in the lambda body.
+
+[&][=]capture by reference and value.
+
+6.13 Template metaprogramming
+
+Avoid
+
+Template metaprogramming refers to a family of techniques that exploit the fact that the C++ template instantiation mechanism is Turing complete.
+
+Template metaprogramming 
+
+Bias.
+
+6.14 Boost
+
+Call Traits from boost/call_traits.hpp
+
+Compressed Pair from boost/compressed_pair.hpp
+
+The Boost Graph Library (BGL) from boost/graph, except serialization (adj_list_
+serialize.hpp) and parallel/distributed algorithms and data structures (boost/graph/parallel/* and boost/graph/distributed/*).
+
+Property Map from boost/property_map, except parallel/distributed property maps (boost/property_map/parallel/*).
+
+Iterator from boost/iterator
+The part of Polygon that deals with Voronoi diagram construction and doesn't depend on the rest of Polygon: boost/polygon/voronoi_builder.hpp, boost/polygon/voronoi_diagram.hpp, and boost/polygon/voronoi_geometry_type.hpp
+
+Bimap from boost/bimap
+
+Statistical Distributions and Functions from boost/math/distributions
+
+Special Functions from boost/math/special_functions
+
+Multi-index from boost/multi_index
+
+Heap from boost/heap
+
+The flat containers from Container: boost/container/flat_map, and boost/container/flat_set
+
+Intrusive from boost/intrusive.
+
+The boost/sort library.
+
+Preprocessor from boost/preprocessor.
+
+6.15 std::hash
+
+std::hash<T> is C++11 hash containers use to hash keys of type T.
+
+std::unordered_map<int, string>
+
+std::unordered_map<int,string, MyIntHash>
+
+6.16 C++11
+
+Forbidden:
+Compile-time rational numbers (<ratio>)
+
+The <cfenv> and <fevn.h>
+
+Ref-qualifiers on member functions, void X::Foo() &  or void X::Foo() &&.
+
+6.17 Nonstandard Extensions
+
+NO
+
+6.18 Aliases
+
+typedef Foo Bar;
+using Bar = Foo;
+using other_namespace::Foo;
+
+7. Naming
+
+7.1 General Name Rules
+
+Be descriptive; avoid abbreviation
+
+7.2 File Names
+
+All lowercase and can include underscores or dashes.
+
+7.3 Type Names
+
+Start with a capital letter and no underscores.
+
+7.4 Variable Names
+
+all lowercases, with underscore between words. Data members of classes(not structs) have additional trailing underscore.
+
+7.5 Constant Names
+
+declared constexpr or const, named with  a leading 'k' and by mixed case.
+
+7.6 Function Names
+
+functions should start with a capital letter and have a capital letter for each new word.
+
+7.7 Namespace Names.
+
+7.8 Punctuation, Spelling and Grammar.
+
+8 Formatting
+
+8.1 Line Length
+
+80 characters is the maximum.
+
+8.2 Non-ASCII Characters.
+
+UTF-8 formatting.
+
+Hex encoding is also OK, and encouraged where it enhances readability. "\xEF\xBB\xBF" or u8"\uFEFF"
+
+8.3 Spaces vs. Tabs
+
+Use only spaces, and indent 2 spaces at a time.
+
+shouldn't use C++11 char16_6 and char32_t.
+
+Choose good parameter names.
+
+Parameter names may be omitted only if the parameter is unused and its purpose is obvious.
+
+If you cannot fit the return type and the function name on a single line, break between them.
+
+If you break after the return type of a function declaration or definition, do not indent.
+
+The open parenthesis is always on the same line as the function name.
+
+There is never a space between the function name and the open parenthesis.
+
+There is never a space between the parentheses and the parameters.
+
+The open curly brace is always on the end of the last line of the function declaration, 
+not the start of the next line.
+
+The close curly brace is either on the last line by itself or on the same line as the open curly brace.
+
+There should be a space between the close parenthesis and the open curly brace.
+
+All parameters should be aligned if possible.
+
+Default indentation is 2 spaces.
+
+Wrapped parameters have a 4 space indent.
+
+
+9. Comments
 
 the best code is self-documenting. Giving sensible names to types and variables is much better than using obscure names that you must then explain through comments.
 
-7.1 File Comments
+9.1 File Comments
 Start each file with license boilerplate.
 
 Every file should contain license boilerplate.
 
 If a .h declares multiple abstractions, the file-level comment should broadly describe the content of the file.
+
 
 **********Google C++ Style Guide**********
 
