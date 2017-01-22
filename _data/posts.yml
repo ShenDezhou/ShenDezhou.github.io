@@ -1,5 +1,12 @@
+Autoconf-make:
+      blog_img: 'img/blog/f.png'
+      style:    ['travel','tour','recreation','tourism']
+      iframe:
+      height:
+      views: 209
+      shares: 23
 Tips-To-Remember:
-      blog_img: 'img/blog/d.png'
+      blog_img: 'img/blog/e.png'
       style:    ['travel','tour','recreation','tourism']
       iframe:
       height:

@@ -3,29 +3,50 @@ layout: blog_detail
 title: Tips-To-Remember
 excerpt_separator: <!--more-->
 ---
-Tools:
-Mail_Outlook_2013
-Office_2013
+Documentation Tools:
+Outlook 2013
+Office 2013
+Visio 2007
 
-C_IDE:
-Sublime Text 3:SFTP,SidebarEnhancement
+CPP_IDE:
+Sublime Text 3: SFTP, SidebarEnhancement
 
 Browser:
 QQBrowser
 
 IM:
 QQ
+Paas
 
 SSH:
 MobaXterm
 
-Git:
+Code Management:
 SourceTree
+TortoiseSVN
 
 Input:
-Sougou
+Sogou
 
 <!--more-->
+
+*****************************************
+
+X11Forwarding problem on RedHat
+
+because RedHat/CentOS require the xorg-x11-xauth package
+
+*****************************************
+
+#将打开文件个数限制为1048768
+ulimit -n 0x100000
+#重新登录
+exec su $LOGNAME
+
+*****************************************
+
+MEMENTO:
+
 VH:exvr_fetcher
 VH/exvr_fetcher/trunk/
 
@@ -42,7 +63,40 @@ http://rhel6.dailybuild.sogou-inc.com/sgbuild/h-report-last.html
 WeekReport:(周四)
 https://oa.sogou-inc.com/wmr
 
-Google C++ Style Guide
+*****************************************
+
+如何写好一封邮件。
+
+发出去的邮件，无法撤回。
+
+顺序：附件、正文、标题、收件人
+
+开头说清楚：谁、什么、何时、为什么
+
+怎么样
+
+是把复杂的事情分成几个大块，每块下面几个小点，以重要性和紧急程度排序，把不可泄漏的重点用黄底标出，层次清楚，皆大欢喜。
+
+用对标点符号、不要中英文标点混用、分清「的地得」、不写错别字、英文单词之间要空格、特殊名词首字母大写
+
+*****************************************
+
+/*
+Copyright (c) 2017-2018 Dezhou Shen, Sogou-Inc.
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+       http://www.apache.org/licenses/LICENSE-2.0
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+*/
+
+*****************************************
+
+**********Google C++ Style Guide**********
 
 1.Goals of the Sytle Guide
 
@@ -60,16 +114,7 @@ Be mindful of our scale
 
 Concede to optimization when necessary
 
-*****************************************
-X11Forwarding problem on RedHat
 
-because RedHat/CentOS require the xorg-x11-xauth package
-*****************************************
-
-#将文件打开限制改为1048768
-ulimit -n 0x100000
-#重新登录
-exec su $LOGNAME
 
 Use standard order for readability and to avoid hidden dependencies:
 
@@ -91,7 +136,7 @@ Definition and declaration in the same file.
 
 1.2The #define Guard
 
-<p roject>_<p ath>_<f ile>_H_.
+project_path_file_H_.
 
 1.3Forward Declareations
 
@@ -393,38 +438,5 @@ Every file should contain license boilerplate.
 
 If a .h declares multiple abstractions, the file-level comment should broadly describe the content of the file.
 
--------------------------------------------------------------------------
+**********Google C++ Style Guide**********
 
-如何写好一封邮件。
-
-发出去的邮件，无法撤回。
-
-顺序：附件、正文、标题、收件人
-
-开头说清楚：谁、什么、何时、为什么
-
-怎么样
-
-是把复杂的事情分成几个大块，每块下面几个小点，以重要性和紧急程度排序，把不可泄漏的重点用黄底标出，层次清楚，皆大欢喜。
-
-用对标点符号、不要中英文标点混用、分清「的地得」、不写错别字、英文单词之间要空格、特殊名词首字母大写
-
----------------------------------------------------------------------------
-
-
-
-/*
-Copyright (c) 2017-2018 Dezhou Shen, Sogou-Inc.
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-       http://www.apache.org/licenses/LICENSE-2.0
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
-*/
-
-
------------------------------------------------------------------------------
