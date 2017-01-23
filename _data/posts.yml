@@ -1,3 +1,10 @@
+Linux os:
+      blog_img: 'img/blog/g.png'
+      style:    ['travel','tour','recreation','tourism']
+      iframe:
+      height:
+      views: 209
+      shares: 23
 Autoconf-make:
       blog_img: 'img/blog/f.png'
       style:    ['travel','tour','recreation','tourism']
