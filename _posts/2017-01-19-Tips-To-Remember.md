@@ -243,6 +243,8 @@ Methods should not provide behavior but should only be sued to set up the data m
 
 Composition is often more appropriate than inheritance. Make it public.
 
+Rationale: A function or destructor marked override or final that is not an override of a base class virtual function will not compile, and this helps catch common errors. The specifiers serve as documentation; if no specifier is present, the reader has to check all ancestors of the class in question to determine if the function or destructor is virtual or not.
+
 3.6 Multiple inheritance
 
 Multiple inheritance is allowed only when all superclasses, whith the possible exception of the first one, are pure interfaces.
