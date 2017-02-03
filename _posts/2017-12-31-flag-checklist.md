@@ -24,19 +24,25 @@ excerpt_separator: <!--more-->
 9.看三本规划、行动、习惯的书
 
 10.开心的日子超过一半的天数
+
 <!--more-->
+
 资源：时间
 
 Process Avaialble Resource
+
 [12m]
 
 Process MAX Resource
+
 [6m,2.5m,4h,4m,1d,1m,1d,0.3m,1d,8h]
 
 Process Allocation Resource
+
 [1m,0m,4h,0m,0d,0m,0d,0m,0d,8h]
 
 Process NEED Resource
+
 2[1m,0.2m,4h,0.1m,1d,0.1m,1d,0.1m,2d,8h]
 
 3[1m,0m,4h,0m,0d,0m,0d,0m,0d,8h]
