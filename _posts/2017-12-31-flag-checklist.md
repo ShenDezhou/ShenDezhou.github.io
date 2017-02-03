@@ -38,16 +38,27 @@ Process Allocation Resource
 
 Process NEED Resource
 2[1m,0.2m,4h,0.1m,1d,0.1m,1d,0.1m,2d,8h]
+
 3[1m,0m,4h,0m,0d,0m,0d,0m,0d,8h]
+
 4[1m,0m,4h,0m,0d,0m,0d,0m,0d,8h]
+
 5[1m,0m,4h,0m,0d,0m,0d,0m,0d,8h]
+
 6[1m,0m,4h,0m,0d,0m,0d,0m,0d,8h]
+
 7[1m,0m,4h,0m,0d,0m,0d,0m,0d,8h]
+
 8[0m,0m,4h,0m,0d,0m,0d,0m,0d,8h]
+
 9[0m,0m,4h,0m,0d,0m,0d,0m,0d,8h]
+
 10[0m,0m,4h,0m,0d,0m,0d,0m,0d,8h]
+
 11[0m,0m,4h,0m,0d,0m,0d,0m,0d,8h]
+
 12[0m,0m,4h,0m,0d,0m,0d,0m,0d,8h]
+
 1[0m,0m,4h,0m,0d,0m,0d,0m,0d,8h]
 
 
