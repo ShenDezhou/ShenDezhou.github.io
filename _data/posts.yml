@@ -1,3 +1,17 @@
+hadoop client:
+      blog_img: 'img/blog/e.png'
+      style:    ['travel','tour','recreation','tourism']
+      iframe:
+      height:
+      views: 209
+      shares: 23
+linux stuff:
+      blog_img: 'img/blog/f.png'
+      style:    ['travel','tour','recreation','tourism']
+      iframe:
+      height:
+      views: 209
+      shares: 23
 2017 Flag Checklist:
       blog_img: 'img/blog/b.png'
       style:    ['travel','tour','recreation','tourism']

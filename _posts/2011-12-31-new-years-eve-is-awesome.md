@@ -5,39 +5,41 @@ excerpt_separator: <!--more-->
 ---
 VECTOR
 
+http://www.cplusplus.com/reference/vector/vector/
 
- <!--more-->
-C++11
-*vector::emplace_back
-
-添加一个新元素到容器的结尾。这个元素会直接在容器结尾构造，即没有复制或移动操作进行。提供的功能完全一样的参数的构造函数的元素被称为.
+<!--more-->
+C++11 vector's new features
+**emplace,emplace_back,shrink\_to\_fit,cbegin,cend,crbegin,crend,data**
 
 ******************************************************
+http://pubs.opengroup.org/onlinepubs/009695399/nfindex.html
 
 #include <fcntl.h>
 
-int posix_fadvise(int fd, off_t offset, off_t len, int advice);
+int posix\_fadvise(int fd, off\_t offset, off\_t len, int advice);
 
-Programs can use posix_fadvise() to announce an intention to access
-file data in a specific pattern in the future, thus allowing the
-kernel to perform appropriate optimizations.
-
-The advice applies to a (not necessarily existent) region starting at
-offset and extending for len bytes (or until the end of the file if
-len is 0) within the file referred to by fd.  The advice is not
-binding; it merely constitutes an expectation on behalf of the
-application.
-
+		Programs can use posix_fadvise() to announce an intention to access
+		file data in a specific pattern in the future, thus allowing the
+		kernel to perform appropriate optimizations.
+		
+		The advice applies to a (not necessarily existent) region starting at
+		offset and extending for len bytes (or until the end of the file if
+		len is 0) within the file referred to by fd.  The advice is not
+		binding; it merely constitutes an expectation on behalf of the
+		application.
+		
 Permissible values for advice include:
 
-POSIX_FADV_NORMAL
-      Indicates that the application has no advice to give about its
-      access pattern for the specified data.  If no advice is given
-      for an open file, this is the default assumption.
-
-POSIX_FADV_SEQUENTIAL
-      The application expects to access the specified data
-      sequentially (with lower offsets read before higher ones).
+	POSIX_FADV_NORMAL
+	
+	      Indicates that the application has no advice to give about its
+	      access pattern for the specified data.  If no advice is given
+	      for an open file, this is the default assumption.
+	
+	POSIX_FADV_SEQUENTIAL
+	
+	      The application expects to access the specified data
+	      sequentially (with lower offsets read before higher ones).
 
 ******************************************************
 
