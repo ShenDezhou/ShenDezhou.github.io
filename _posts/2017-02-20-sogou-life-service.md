@@ -194,8 +194,8 @@ VNC连接到上面几台机器上（密码：）， 然后打开chrome浏览器�
 
         是调用了大众点评的开发者API接口   参考： http://developer.dianping.com/app/tech/api
 
-                var appkey = "343629756";  
-                var secret = "a54b3d169af14dd688b56fe9c4b9ebcc";  
+                var appkey = "-";  
+                var secret = "-";  
         每日更新的crontab任务：见117机器上的   /fuwu/Manage/Schedule/schedule_get_dianping_all_tuan.sh
 
 大众点评的优惠信息的抓取
