@@ -1,3 +1,10 @@
+sogou life service:
+      blog_img: 'img/blog/a.png'
+      style:    ['travel','tour','recreation','tourism']
+      iframe:
+      height:
+      views: 209
+      shares: 23
 hadoop client:
       blog_img: 'img/blog/e.png'
       style:    ['travel','tour','recreation','tourism']
