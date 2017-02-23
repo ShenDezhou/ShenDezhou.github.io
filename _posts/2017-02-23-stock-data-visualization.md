@@ -27,5 +27,5 @@ GET http://114.215.101.25/index.html 对应/search/money/web/index.html
 
 GET http://114.215.101.25/append?file=xueqiu.like&key=abcd&key=cdef&key=fghi 对应/search/money/web/xueqiu.like文件增加一行abcd	cdef	fghi
 
-GET http://114.215.101.25/xueqiu.like
+GET http://114.215.101.25/xueqiu.like 获取点赞文件内容
  
