@@ -28,4 +28,42 @@ GET http://114.215.101.25/index.html 对应/search/money/web/index.html
 GET http://114.215.101.25/append?file=xueqiu.like&key=abcd&key=cdef&key=fghi 对应/search/money/web/xueqiu.like文件增加一行abcd	cdef	fghi
 
 GET http://114.215.101.25/xueqiu.like 获取点赞文件内容
- 
+
+# CSV转JSON #
+	function csvJSON(csv){
+	
+	  var lines=csv.split("\n");
+	
+	  var result = [];
+
+	  // xueqiu.url.types
+	  var headers= ["url","城市","city","行业","industry"];
+	  // xueqiu.crumb
+	  //var headers= ["url","名称","简介","time"];
+
+	  for(var i=0;i<lines.length;i++){
+	
+		  var obj = {};
+		  var currentline=lines[i].split("\t");
+	
+		  for(var j=0;j<headers.length;j++){
+			  obj[headers[j]] = currentline[j];
+		  }
+	
+		  result.push(obj);
+	
+	  }
+	  
+	  return JSON.stringify(result); //JSON
+	}
+
+# GBK转UTF-8 #
+	function gbk_utf8(gbkdata){
+
+		var x = new Uint8Array(gbkdata);
+
+		var result = new TextDecoder('gbk').decode(x);
+		// utf8 string
+		return result;
+	}
+	
