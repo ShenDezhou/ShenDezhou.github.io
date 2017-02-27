@@ -14,9 +14,9 @@ excerpt_separator: <!--more-->
 
 涉及到的机器：
 
-    （1）  10.134.106.123  （）  扫URL库，获取点评店铺的url列表
+    （1）  10.134.106.123  （Tupu@2015）  扫URL库，获取点评店铺的url列表
 
-	（2）  10.134.96.110   （）  用于分发到各个机器上去抓取页面，解析页面（使用dbnetget的方式）
+	（2）  10.134.96.110   （Tupu@2015）  用于分发到各个机器上去抓取页面，解析页面（使用dbnetget的方式）
         10.142.105.210
         10.142.104.204
         10.142.47.173
@@ -30,7 +30,7 @@ excerpt_separator: <!--more-->
         10.134.79.154
         10.134.96.152
 
-	（3）  10.134.96.110   （）  用于分发到各个机器上去抓取无线点评团购页面，解析页面
+	（3）  10.134.96.110   （Tupu@2015）  用于分发到各个机器上去抓取无线点评团购页面，解析页面
        	10.142.105.210
         10.143.9.182
         10.143.21.160
@@ -41,13 +41,13 @@ excerpt_separator: <!--more-->
         10.142.104.204
         10.142.47.173
 
-	（4）  10.134.14.117   （）   点评的数据制作，电影的数据抓取（除了chrome spider抓取之外的）制作
+	（4）  10.134.14.117   （noSafeNoWork@2014）   点评的数据制作，电影的数据抓取（除了chrome spider抓取之外的）制作
 
-	（5）  10.134.34.33     （） chrome spider抓取  
+	（5）  10.134.34.33     （tupu@2015） chrome spider抓取  
         10.134.79.154:1
         10.139.27.217:1
         10.142.104.204:1
-        10.142.105.210:1	()
+        10.142.105.210:1	(Tupu@2015)
 
 ----------
 
@@ -106,7 +106,7 @@ excerpt_separator: <!--more-->
 Spider Task Manager：抓取任务管理Server，包括加载抓取任务，为spider client分发抓取url，将已经抓取的url写入到已经抓取的url列表中，控制抓取深度等，以及在程序退出时，将抓取任务写入Spider Task running detail DB中，用于下次可以从当前状态继续抓取
 Spider Task Manager： 
 
-部署在 10.134.34.33  (root   )   /search/odin/apache-tomcat-7.0.67/webapps/taskservice  
+部署在 10.134.34.33  (root   tupu@2015)   /search/odin/apache-tomcat-7.0.67/webapps/taskservice  
 SVN：http:10.134.14.117/svn/repository/taskservice
 
 Spider Task meta DB：抓取任务的原始信息，包括每个抓取任务的taskid，feed，抓取间隔，抓取深度，解析脚本等
@@ -120,10 +120,10 @@ Spider task result DB： 这个现在是存储在117机器上的，这块现在�
 Spider Task running detail DB：在stop server时，将每个任务的当前抓取状态记录下来（即每个任务的已抓取列表，抓取队列等信息）
 
 
-spider client： 浏览器的抓取插件，详情可见 10.134.79.154机器上的chrome浏览器插件 （vnc连接到10.134.79.154:1    密码：）
+spider client： 浏览器的抓取插件，详情可见 10.134.79.154机器上的chrome浏览器插件 （vnc连接到10.134.79.154:1    密码：Tupu@2015）
 spider client：10.134.79.154:1        10.139.27.217:1        10.142.104.204:1        10.142.105.210:1
 
-VNC连接到上面几台机器上（密码：）， 然后打开chrome浏览器，打开插件即可进行抓取
+VNC连接到上面几台机器上（密码：Tupu@2015）， 然后打开chrome浏览器，打开插件即可进行抓取
 
 ### 运营注意 ###
 注意：spider client 是打开浏览器一直在运行的，运行时间长了浏览器会崩溃掉，这时候需要重启 Spider Task Manager  然后重启 spider client所在的机器，然后到spider client所在机器上打开chrome浏览器，点击插件的抓取即可；
@@ -194,8 +194,8 @@ VNC连接到上面几台机器上（密码：）， 然后打开chrome浏览器�
 
         是调用了大众点评的开发者API接口   参考： http://developer.dianping.com/app/tech/api
 
-                var appkey = "-";  
-                var secret = "-";  
+                var appkey = "343629756";  
+                var secret = "a54b3d169af14dd688b56fe9c4b9ebcc";  
         每日更新的crontab任务：见117机器上的   /fuwu/Manage/Schedule/schedule_get_dianping_all_tuan.sh
 
 大众点评的优惠信息的抓取
@@ -206,7 +206,7 @@ VNC连接到上面几台机器上（密码：）， 然后打开chrome浏览器�
 
 ## 2.3编译数据 ##
 （5） 在117（已过保）上执行 做数据的脚本（清洗，归一化，合并，最终的结果在DataCenter目录下）  （大概一两天）
-		回到10.134.14.117(root   )机器上去做数据，/fuwu/build_restaurant.sh || /fuwu/build_play.sh        
+		回到10.134.14.117(root  noSafeNoWork@2014 )机器上去做数据，/fuwu/build_restaurant.sh || /fuwu/build_play.sh        
 
 （6）到110机器上建索引（建索引的脚本会从117机器的DataCenter下拷贝数据过去）
 ## 2.4说明 ##

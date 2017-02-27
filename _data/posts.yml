@@ -1,3 +1,10 @@
+spider data flow:
+      blog_img: 'img/blog/d.png'
+      style:    ['travel','tour','recreation','tourism']
+      iframe:
+      height:
+      views: 209
+      shares: 23
 stock data visualization:
       blog_img: 'img/blog/c.png'
       style:    ['travel','tour','recreation','tourism']
