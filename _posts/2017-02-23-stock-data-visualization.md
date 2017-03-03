@@ -67,10 +67,20 @@ GET http://114.215.101.25/xueqiu.like 获取点赞文件内容
 		return result;
 	}
 
-1.index.html显示二维码，二维码内容为http://114.215.101.25/login,通过get请求append?file=xueqiu.user&time=abcd写到文件xueqiu.user中
-2.微信扫一扫，扫描二维码，手机点击打开原网页，触发get请求。
-3.webserver收到get请求GET http://114.215.101.25/login?nsukey=eA04u7Jmet6VkBxjWm6YSazfdSg9DEFocoKicTns6iuZrtxy9ujylnpbMx%2BdGrJAbNbbZtcl4nMbZVDm4O3CWg%3D%3D
-4.webserver如xueqiu.user文件有时间记录，则把nsukey保存到xueqiu.user中，否则丢弃。
-5.这样xueqiu.user中有两行记录一行时间、一行nsukey。
-6.index.html读取xueqiu.user文件，如果有时间、nsukey记录，并且时间是当时保存的时间则nsukey作为用户id登录成功。
-	
+
+1.显示xueqiu.user的词云，点击任何用户均可登陆
+2.或者在输入框创建新用户、校验手机号位数
+3.登陆保存时间和手机号：GET append?file=xueqiu.user&key=time&key=cell
+4.显示选股界面。
+
+******
+喜欢这只股票的用户还喜欢某某某股票是这样的。对于某股票，有一个用户集，对于用户集，有一个股票集。	
+比如AAAAAA   对应了   UUUUU    VVVVV  WWWW 三个用户
+UUUUU     喜欢   AAAAA  BBBBB   CCCCC
+VVVVV     喜欢   AAAAA  BBBBB   CCCCC
+WWWW     喜欢   EEEEE  FFFFF   GGGGG
+
+那么结果就是把AAAAA   BBBBB   CCCCC   EEEEE   FFFFF  GGGGG 输出就好了。
+*******
+
+周末愉快。
