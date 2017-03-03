@@ -66,4 +66,11 @@ GET http://114.215.101.25/xueqiu.like 获取点赞文件内容
 		// utf8 string
 		return result;
 	}
+
+1.index.html显示二维码，二维码内容为http://114.215.101.25/login,通过get请求append?file=xueqiu.user&time=abcd写到文件xueqiu.user中
+2.微信扫一扫，扫描二维码，手机点击打开原网页，触发get请求。
+3.webserver收到get请求GET http://114.215.101.25/login?nsukey=eA04u7Jmet6VkBxjWm6YSazfdSg9DEFocoKicTns6iuZrtxy9ujylnpbMx%2BdGrJAbNbbZtcl4nMbZVDm4O3CWg%3D%3D
+4.webserver如xueqiu.user文件有时间记录，则把nsukey保存到xueqiu.user中，否则丢弃。
+5.这样xueqiu.user中有两行记录一行时间、一行nsukey。
+6.index.html读取xueqiu.user文件，如果有时间、nsukey记录，并且时间是当时保存的时间则nsukey作为用户id登录成功。
 	
