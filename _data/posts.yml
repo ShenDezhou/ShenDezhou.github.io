@@ -1,3 +1,17 @@
+spider learning:
+      blog_img: 'img/blog/f.png'
+      style:    ['travel','tour','recreation','tourism']
+      iframe:
+      height:
+      views: 209
+      shares: 23  
+beginner linux:
+      blog_img: 'img/blog/e.png'
+      style:    ['travel','tour','recreation','tourism']
+      iframe:
+      height:
+      views: 209
+      shares: 23      
 spider data flow:
       blog_img: 'img/blog/d.png'
       style:    ['travel','tour','recreation','tourism']
