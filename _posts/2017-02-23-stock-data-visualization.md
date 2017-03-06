@@ -88,3 +88,21 @@ encodeURI()是Javascript中真正用来对URL编码的函数。
 最后一个Javascript编码函数是encodeURIComponent()。与encodeURI()的区别是，它用于对URL的组成部分进行个别编码，而不用于对整个URL进行编码。
 因此，"; / ? : @ & = + $ , #"，这些在encodeURI()中不被编码的符号，在encodeURIComponent()中统统会被编码。至于具体的编码方法，两者是一样。
 它对应的解码函数是decodeURIComponent()。
+=======
+
+1.显示xueqiu.user的词云，点击任何用户均可登陆
+2.或者在输入框创建新用户、校验手机号位数
+3.登陆保存时间和手机号：GET append?file=xueqiu.user&key=time&key=cell
+4.显示选股界面。
+
+******
+喜欢这只股票的用户还喜欢某某某股票是这样的。对于某股票，有一个用户集，对于用户集，有一个股票集。	
+比如AAAAAA   对应了   UUUUU    VVVVV  WWWW 三个用户
+UUUUU     喜欢   AAAAA  BBBBB   CCCCC
+VVVVV     喜欢   AAAAA  BBBBB   CCCCC
+WWWW     喜欢   EEEEE  FFFFF   GGGGG
+
+那么结果就是把AAAAA   BBBBB   CCCCC   EEEEE   FFFFF  GGGGG 输出就好了。
+*******
+
+周末愉快。
