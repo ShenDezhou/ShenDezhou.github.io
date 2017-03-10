@@ -4,8 +4,8 @@ title: spider learning
 excerpt_separator: <!--more-->
 ---
 
-![](addr_space.png)
-![](addr_space1.png)
+![](/img/addr_space.png)
+![](/img/addr_space1.png)
 ## TASK ##
 	ACE_Task是ACE中的任务或主动对象“处理结构”的基类。ACE使用此类来实现主动对象模式。所有希望成为“主动对象”的对象都必须由此类派生。同时可将它看作是更高级的、更为面向对象的线程。
 	ACE_Task处理的是对象，因此更有利于构造OO程序，产生更好的OO软件，而且，它还包括了一种用于
