@@ -706,4 +706,4 @@ wait：等待线程退出
 
 		如果current index大于vr info list个数，则删除请求，消息处理完毕，继续消息处理大循环
 
-##  ##
+# 3.reader #
