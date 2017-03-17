@@ -3,7 +3,8 @@ layout: blog_detail
 title: spider learning
 excerpt_separator: <!--more-->
 ---
-
+Spider架构
+<!--more-->
 ![](/img/addr_space.png)
 ![](/img/addr_space1.png)
 ## TASK ##
