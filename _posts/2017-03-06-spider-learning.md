@@ -707,3 +707,160 @@ wait：等待线程退出
 		如果current index大于vr info list个数，则删除请求，消息处理完毕，继续消息处理大循环
 
 # 3.reader #
+设置LC CTYPE
+读取config filename、config keyname、if scan xmldb、
+listen port、xmldb addr、reader thread num、bak dir、
+max linenum、is send file，xml reader address,
+if recv file,sock recvbuff size,sock sendbuf size,
+
+g_xmlItemMgr初始化
+
+如果is send file
+	创建XmlSendFile，连接打印min file id
+	循环：
+		send file不为0，打印init file id
+
+读取if send index
+	读取index num
+		循环初始化xml send task
+
+读取if send summery
+	读取summery num
+		循环初始化xml send task
+
+创建xmlpage reader对象（reader线程数，64，cfg）
+初始化
+
+如果if scan xmldb
+	创建quickdbadapter，
+	xmldb连接addr
+	循环开始
+		xmldb读取下一个key、写到data.iov_base,data.iov_len
+		当返回为1退出循环
+		当返回小于0打印next error
+		为0，xmlpage reader--putdata（data）
+	否则，停止xmlpage reader task和其他sendtask数组中的任务
+
+循环开启g send task，
+
+发送端：
+	如果不接受文件
+	创建addr对象，acceptor对象，server属性赋值
+	打开addr，失败打印错误，停止stop task
+	当终止循环
+		处理事件
+	acceptor关闭，reactor 关闭singleton，关闭xml page reader，
+	如果send file，关闭sendFileTask
+接收端：
+	创建data port，创建data acceptor
+	data acceptor打开端口
+		失败关闭全部线程
+		acceptor--close
+	启动reactor，进入循环
+	关闭全部线程，
+	关闭reactor。
+
+
+
+## sendfileTask ##
+### init ###
+获取xml reader addr,base dir,生成m file name,
+send file thread num
+
+### open ###
+用send file thread num创建线程
+
+### svc ###
+创建xml send file对象：初始化send buf
+
+send file连接
+	创建connector，addr，如果全局变量sock sendbuf size大于16384，设置SOL SOCKET--SO SNDBUF参数
+	连接connector，返回
+
+循环获取消息块
+	获取SendFileRequest
+	释放消息块
+	循环
+		拼接base dir/xml index file id.dat
+		发送文件，接受响应成功
+		记录日志
+		拼接base dir/xml item file id.dat
+		发送文件，接受响应成功
+		记录日志
+		如果发送item成功
+			file id 存入send or recv set
+			循环如果在send or recv set中查到到比这个id大的，自增send file id
+			删掉file id
+			集合中未找到
+			则打印日志
+				获取send file name，
+				写方式打开文件
+				到文件开始位置
+				写入file id
+				关闭文件
+				记录日志
+			退出循环
+		退出循环
+		否则关闭xml send file对象
+		休眠1秒
+		继续循环
+	释放请求
+	释放xml send file
+
+## sendfileCheck ##
+### init ###
+读frequency，check time interval
+
+### open ###
+启动1线程
+
+### svc ###
+循环
+	睡眠time interval
+	如果在不在send file，返回0
+	当前时间保存
+	如果当前时间跟上次时间超过频率
+		打印日志
+		关闭文件
+		关闭索引文件
+		创建send file request对象
+		赋值file id
+		生成消息，放入SendFileTask中
+		打印日志
+		index pos设置为0
+		now file id增1
+		nowitem idx=0
+
+## xml send task ##
+### init ###
+根据send type判断prefix是index（1） 还是 summery（0）
+创建prefix groud index num串，
+读取sender num
+判断错误
+读取prefix group index
+读取address list
+
+循环sender num
+	创建xml sender对象
+	创建xml send task对象，放入队列中
+
+### open ###
+判断sender num
+激活线程
+
+### svc ###
+循环
+	sender--send
+		ret增1
+	如果ret超过sender num的3倍
+		如果temp min id大于sender--file id
+			保存temp min id
+		如果temp min id大于sender--item index
+			保存temp min index
+		如果temp min id 存在
+			设置min file
+		ret = 0
+		休眠1秒
+	释放sender
+	打印日志
+
