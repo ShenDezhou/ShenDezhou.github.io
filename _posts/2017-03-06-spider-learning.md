@@ -52,7 +52,7 @@ excerpt_separator: <!--more-->
 	
 	在控制权转移时, 需要特别注意这一点.(空间的所有权可能会随size()方法的调用而转移)在使用外部的缓冲区构造ACE_Message_Block或者初始化时,需要特别注意.
 
-# spider定时器 #
+# 1.spider定时器 #
 设置mmap threadhold,256K
 设置SIGPIPE忽略
 设置定时器处理
@@ -93,7 +93,7 @@ LOG配置
 
 释放curl对象资源。
 
-# scan任务 #
+# 1.1scan任务 #
 ## init ##
 
 检查ExVrFetcher字段，
@@ -208,7 +208,10 @@ thr mgr终端grp线程，
 等待子线程退出。
 
 
-# fetcher #
+----------
+
+
+# 2.fetcher #
 初始化信号量fetch_map_mutex
 设置mmap threadhold,256K
 设置SIGPIPE忽略
@@ -248,7 +251,7 @@ LOG配置
 删除长度数组、内容二维数组
 释放curl对象资源。
 
-## ScanTask ##
+## 2.1ScanTask ##
 ### init ###
 读取Vr、Cr、redis，创建redis对象，
 连接redis，如果重连次数超过5次，打印日志，退出，
@@ -369,9 +372,11 @@ LOG配置
 		对于每个sched unit，打印discard日志，
 		删除内部消息队列，req vector容器删除req
 	打印日志输出c doc num
-	---那500行代码结束---	
-		
-## UrlUpdateTask ##	
+	那500行代码结束	
+
+
+## 2.2UrlUpdateTask ##
+
 ### init ###
 	获取vr信息
 
@@ -469,15 +474,55 @@ curl easy cleanup
 curl slist free all
 打印日志
 
-		
-			
+## 2.3FetchTask ##
+### init ###
+读取vrresource
 
-			
-				
-				
+### open ###
+创建n个线程
+
+### put ###
+判断req--error，放入putq
+
+### svc ###
+	创建vrmysql,创建curl slist,curl easy init,初始化curl，
+	循环取队列：
+		如果下一级队列大小超过5倍线程数，则暂时不处理自身队列
+		获取时间、如果vr info list是空销毁此对象，继续处理下一个
+		处理vr info list，查看req--current index对象所指
+		如果重试次数为0，当前index也为0，则更新process_timestamp的fetch start time，
+		如果是第一次抓取，或者到达重试时间5秒，
+			更新重试次数，请求时间，获取开始时间
+			如果speed contorl（目前无作用），就计时然后超速按照speed（每秒抓取数量）进行抓取。
+			清空html，根据curl vi--url获取html
+			如果speed control，更新last fetch time.
+			获取经过ms，**WASTE_TIME_MS这个函数usec部分不该除1000**.
+			如果抓取成功或者重试超3次
+				创建request t
+				如果抓取成功，打印url、抓取时间毫秒
+				抓取失败，dreq--error标记
+				锁定fetch map mutex，如果有记录，且值大于0，则更新值为0
+				否则打印错误日志
+				释放fetch map信号量
+				打印错误日志
+				dreq设置fetchTime，自增内存memcheck
+				打印日志
+				创建message block，放入WriteTask队列
+				当前索引增1
+				如果当前索引超过或等于vr info list个数
+				做收尾工作，保存<process_timestamp>fetch end time字段，释放对象，收尾处理
+				否则重新放回消息队列末尾，继续抓取循环
+			否则打印抓取失败
+	休息1秒
+	重新放入队列
+	释放curl对象，释放curl slist，打印日志
+
+### stopTask ###
+flush
+wait
 	
 
-## WriteTask ##
+## 2.4WriteTask ##
 创建信号量unique_set_name_mutex
 
 ### init ###
@@ -506,5 +551,158 @@ curl slist free all
 	设置curl回调函数htmlWriteCallback、允许跳转、跳转层次、不发SIG、读响应超时、连接超时、刷新连接、http头用Expect，
 	htmlWriteCallback，将ptr里的数据复制到stream指针中，
 	循环getq获取msg block：
-		
-		
+		请求req
+		判断，如果是req--tag是customer
+			判断write start time是否为0，为0更新该字段
+			判断请求是否为error
+				打印日志
+				如果req->ds id为0，debugInfo设为xml无法访问，不为0，debugInfo为ds name：xml无法访问
+				创建vrdeletedata对象
+				保存vrdata的class id、res id、data group、fetch time、status（update）、url、status id、timestamp id、citemNum、
+				锁定counter信号量（根据res id取模）
+				如果req的class id大于70000000，
+				循环遍历citemNum，获取doc id，放入vr data的v docid中，
+				循环遍历citemNum，获取doc id，删除req--conter t--m docid
+				解锁conter信号量
+		打印日志
+		创建vr data消息对象，放入DeleteTask中
+		创建err info=res name ： debugInfo
+		判断lflag值，ERR
+			保存detai为err info<br>,设置parseOK为false
+			如果lflag为success并且req--citemNum为0
+				detail设置为err info[ds name:item数为0]<br>
+				将fetch status为>4和1的设置成4，设置parseOK为false，
+			如果req--citemnum不为0，lflag为success
+				获取failedKeyCount除以总的citemNum，
+				比例大于0.8，那么log msg赋值为err info：<校验失败的item>.
+					truncKey msg，如果失败key技术小于等于20条，加上req--faildKeyWord，
+					否则循环遍历前20条记录，赋值到truncKey msg
+					打印日志，
+					将parseOK设置为false，
+			如果parseOK，
+				将debugInfo附加上xml解析成功
+			锁定counter信号量
+			req--counter--fetch detail更新detail
+			如果req--is changed或者is manual
+				拼接vr update info，执行select语句
+				如果记录数为0
+					拼接insert<vr update info>,插入记录
+			如果req--counter t数量为0
+				拼接update<vr resource>设置is manuall update
+				更新<vr update info>的status为2
+			如果lflag不为ERR
+				对req--counter t--ds counter--succss count增1
+			如果成功率小于0.2
+				保存到fail url msg
+			如果如果url success count为0
+				更新vr data 设置更新日期
+			如果fail url msg大于0
+				保存log message，更新fetch status为4
+			更新req--counter t--ds counter--current item num增write count个
+			循环ds counter：
+				获取当前条目个数，当前总数，上一条总数
+				如果是自动
+					判断当前数量和上次比例小于0.2，更新<vr data>的时间
+			如果上次数量跟本次不同
+				筛选<vr update info>，如果没记录，插入记录
+			如果存在failed item msg
+				更新req--counter t--fetch detail
+			如果当前物品数目超过最大数量或者counter t的总数超过最大URL数量
+				创建sub request t对象，保存res id、status id、timestamp id、is large vr、is footer、updateType
+				放入mysqlhandleTask中，打印日志
+			判断last item num大于0
+				计算rate
+				更新<process timestamp>
+			如果fetch status不为1或者fetch status小于error status或者error status为1
+				保存error status为fetch status
+			如果fetch status 不为1，更新<vr resource>的fetch status
+			创建VrdeleteData
+			循环counter t的m docid:
+				添加到delete data--v docid中
+			保存class id、data group、res id、fetch time、status、timestamp id
+			如果deleteData的v docid数量大于0，创建消息传给DeleteTask
+			否则释放deleteData
+			释放req--counter t
+			锁定unique set name信号量
+			删除redisset（Del set和Unique name set同时被删）
+			解锁信号量
+		否则fetch status不为1，设置counter t的error status为fetch status
+		当条件不满足，更新fetch status，flag为false是
+			count减一，debugInfo保存，ds counter--current item num加上write count，如果不是error，保存ds counter[id]为success count
+
+## MysqlHandlerTask ##			
+### init ###
+获取vr resource、cr resource配置文件获取xml page reader和multipleHitXml
+
+### open ###
+创建线程
+
+### put ###
+判断消息队列数目是否超过100倍。休眠10秒
+
+### svc ###
+	连接vr sql，
+	循环取消息队列
+		获取req，如果req--is footer，更新vr resourceset设计，manual update=0，mu5 sum、query total、err info
+		如果write num为0且req--item num也为0.如果data from字段为4，更新update customer resource
+		如果item num大于零，并且schema fail 占总item num比大于0.05，打印错误日志
+		保存			时间戳，打印日志
+		创建MessageBlock对象，放入OnlineTask流水
+		打印时间
+		如果req--item不为0，class id大于以前
+		如果classid大于70000000发送给multihit
+		其他发送给普通sender
+		如果成功，data status置位1，更新<update status>设置res
+		如果updateType为INSERT
+			如果class id大于70000000
+				插入<vr data>res id、status id、keyword、optword、synonym，data_status,check_status, create_date, update_date, status,update_type,valid_status,valid_info,md5_sum,doc_id,new_frame,loc_id,location, data_source_id, hit_field
+			否则
+				插入<vr data> res_id,status_id,keyword,optword,synonym,data_status,check_status, create_date,update_date, status,update_type,"valid_status,valid_info,md5_sum,doc_id,new_frame,loc_id,location, data_source_id
+		如果updateType为UPDATE1：status=1，update type=2，
+		如果updateType为UPDATE2：status=1，update type=0，去掉loc id
+		如果updateType为UPDATE3：status=1，update type=0，
+		如果updateType为OTHOR
+			req--is large vr
+				更新<vr resource>设置优先级为2
+		其他直接删除消息块，release、释放资源。
+		执行sql语句，失败打印日志，成功writenum增1
+
+### stopTask ###
+flush：清空消息队列，unblock所有的线程
+wait：等待线程退出
+
+## VRInfo的研究 ##
+### ScanTask ###
+	get resource:
+		循环vr info list,更新fetch map[uniq key]=0，
+		将resource status （res_status>1）的中url放入vr info list
+		如果info list 为空删除
+		如果没有在fetch map中查到uniq key，vr info list或者sitemap info map为空，放入UrlUpdateTask流水
+	deleteScheUnit:
+		循环req sched unit中的req--data--vr info list，删除fetch map中对应的uniq key.
+	get customer resource:
+		加入vi info list
+
+### UrlUpdateTask ###
+	svc：
+		如果手动处理且vr info list为空，更新vr resource的manual update
+		放入FetchTask流水
+	
+		updateUrl：
+			将vr info list放入old urls map中。
+		reloadUrl：
+			遍历vr info list，在fetch map中查找到对应的uniq key赋值为0
+			释放vr info list.
+			从data resource中取url，放入vr info list中。
+		更新counter t的count，
+
+### FetchTask ###
+	svc：
+		如果vr info list为空
+			删除消息继续
+
+		获取vr info list[current index]对应的vi,进行抓取
+
+		如果current index大于vr info list个数，则删除请求，消息处理完毕，继续消息处理大循环
+
+##  ##
