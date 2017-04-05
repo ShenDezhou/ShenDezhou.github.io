@@ -842,7 +842,22 @@ send file连接
 
 循环sender num
 	创建xml sender对象
-	创建xml send task对象，放入队列中
+		保存m address、send type、send task index、hash index、hash num，
+		保存n file name为pos_SUM_task index_index_m address.dat
+		创建sum conn和创建index conn
+		file id，item index, file pos,fd,fd file id, skip count, error count, index num,fd index
+		init
+			打开m file name
+			读21字节
+			关闭m file name
+			获取file id、item index
+			如果file id小于min file id，
+				file id置成min file id
+				item index置成1
+				将file id、item index存入文件m file name
+			
+
+	创建xml send task对象，放入g send tasks容器中，
 
 ### open ###
 判断sender num
@@ -850,7 +865,110 @@ send file连接
 
 ### svc ###
 循环
+
 	sender--send
+		read
+			如果file id大于g now file id
+				file id保存now file id
+				item index保存now item idx
+				如果item index为0，赋1
+			如果file id与now file id相等且item index大于now item	idx，	
+				返回0
+			如果m data--header--file id与file id相等且m data--header--item idx与item index 相等，
+				返回1
+			如果file id与now file id-1相等且item index>MAX ITEM COUNT
+				file id增1
+				item index=1
+				保存
+			如果file id与now file id相等或者file id与now file id-1相等且item index大于now item idx
+				从vitems读取item index-1的ItemData
+				如果item--header--file id与file id相等且item--header--item idx与itemindex相等，
+					将item--header保存data--header、
+					item--doc id保存data--doc id
+					item--url保存data--url
+					将item--content保存到data--content
+					ret赋1
+				如果返回1 返回1
+				如果file id与now file id相等，返回0
+			如果file id小于min file id
+				file id赋值min file id
+				item index赋1
+				保存
+			如果fd>=0且fd file id与fild id不等
+				关闭文件fd
+				关闭fd index
+			如果fd<0
+				file name拼接xml item file id.dat
+				打开文件
+					打开失败
+					file id增1
+					item index赋1
+					保存
+				fd file id赋file id
+				file pos赋0
+				file name拼接xml index file id.dat
+				打开索引文件
+					打开失败
+					打印日志
+					成功
+						循环读文件
+							获取index pos doc id
+							将obj id转成doc id
+							将doc id与number进行hash计算
+							将pos和hash结果放入xml index容器中
+							index num自增1
+						返回index num
+				循环处理，判断item index是否小于index num+1且hash index不等于xml index容器中item index-1表示的hash，
+					item index增1
+					item index每1000，保存一次
+				item index大于index num + 1退出循环
+				file pos获取xml index容器item index-1位置的数据，
+				读取文件中对应位置到m data header中，判断长度是否正确，不正确退出循环
+				判断m data--header--file id与file id是否一致，不一致退出循环
+				判断m data--header--item index与item index是否一致，不一致退出循环
+				判断m data--doc id是否小于m data--header--doc id len + 1，否则截取doc id len+1
+				判断m data--url否则截取
+				判断m data--content否则截取
+				从文件中读取m data--doc id，
+				从文件中读取m data--url，
+				从文件中读取m data--conetnt，
+				item index赋值为m data--header--item idx
+				file pos赋值下一阶段，返回1
+			如果index num<=MAX ITEM COUNT且item index>=index num+1
+				无限循环
+					读取文件中m data--header
+					读取失败，退出循环
+					如果m data--header--file id不等于file id，退出循环
+					如果m data--header --item idx小于item index
+					file pos增n+doc id len、url len、content len，继续循环
+					否则截取doc id len+1
+					判断m data--url否则截取
+					判断m data--content否则截取
+					从文件中读取m data--doc id，
+					从文件中读取m data--url，
+					从文件中读取m data--conetnt，
+					item index赋值为m data--header--item idx
+					file pos赋值下一阶段，返回1
+			关闭fd，fild id增1，item index赋1，清空m data,保存，关闭fd index
+			返回 0
+			如果返回值大于0
+				返回值记为0，将m data中object id转为doc id，用docid与hash num计算data index，计算docidUI信息
+				如果hash index与data index相等，
+					如果send type为1，
+						index conn发送data url，doc id， conent，m data--header--status
+					如果m data--header--status不为XML UPDATE，
+						sum conn发送url，doc id，content，m data--header--status
+					如果ret为1，
+						打印日志
+					如果ret<0
+						赋skip count为10000
+						如果如果发送失败，返回值ret为-2，err count增1
+						如果发送计数小于5，返回-1，
+						err count赋0
+				如果ret 为1
+					保存日志
+				如果ret不为0，保存日志，归位skip count\error count\item index增1，保存，返回1
+			返回0
 		ret增1
 	如果ret超过sender num的3倍
 		如果temp min id大于sender--file id
@@ -859,6 +977,16 @@ send file连接
 			保存temp min index
 		如果temp min id 存在
 			设置min file
+				当min id小于min file id或者now fild id小于min id或者now file id-1小于等于min file id
+					返回0
+				打印日志、上锁
+				如果并非发送文件
+					send file id赋值now file id - 1
+					从min file id遍历到min id和now file id-1和send file id中最小值（不包含）
+						删掉xml item i.dat,
+						删掉xml index i.dat,
+						min  file id增1
+			解锁
 		ret = 0
 		休眠1秒
 	释放sender
