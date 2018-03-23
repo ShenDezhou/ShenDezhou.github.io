@@ -1,3 +1,8 @@
+    - images: [1,16]
+      name: '最新'
+      count: 16
+      prefix: 'beauty/beauty_0'
+      link: 'single_0'
     - images: [1,94]
       name: '美图'
       count: 94
