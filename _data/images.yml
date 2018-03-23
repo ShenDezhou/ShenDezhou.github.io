@@ -1,4 +1,4 @@
-    - images: [1,16]
+    - images: [0,16]
       name: '最新'
       count: 16
       prefix: 'beauty/beauty_0'
